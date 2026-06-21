@@ -16,7 +16,6 @@ The goal of this repository is to document the full project workflow over the se
 ---
 
 ## Team Members
-- Jonah Karstens
 - Dario Pino
 - Sudhin Hegde
 - Kushal Shiva Patel
