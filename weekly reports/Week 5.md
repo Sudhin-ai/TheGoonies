@@ -67,5 +67,6 @@ yaw_range	Ja (677%)
 
 ## Contributions
 - Jonah: AirPods Anlayse
-- Sudhin: Recherche nach Quellen und Umsetzung
+- Sudhin: Recherche nach Umsetzung
+- Kushal: Recherche nach Quellen
   
