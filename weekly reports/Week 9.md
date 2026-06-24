@@ -6,7 +6,9 @@ Eyetracker erhalten und Skripte austesten sowie ein funkionierendes Setup aufbau
 ## Work Done This Week
 
 20 Texte zum testen und 10 MC-Fragen aufgebaut
+
 Erste Versionen der Eyetracking-Skripte erstellt
+
 Den Tobii Eyetracker 5 getestet
 
 
@@ -17,13 +19,18 @@ Den Tobii Eyetracker 5 getestet
 
 ## Challenges
 Tobii funktioniert nicht auf Mac
+
 Projekt muss auf Windows übertragen werden
+
 Airpods-Daten müssen auf Windows übertragen werden und mit Timestamps mit den Gaze-Daten synchronisiert werden.
 
 ## Plan for Next Week
 Daten sammeln 
-Die 20 erstellten Texte für das Experiment nutzen 
+
+Die 20 erstellten Texte für die Tests nutzen 
+
 Weitere 20 Texte und MC-Fragen erstellen
+
 Skripte für Datenerfassung erstellen
 
 ## Contributions
