@@ -7,8 +7,8 @@ Zwischenpräsentation vorbereiten
 Weekly reports
 
 ## Plan for Next Week
-Feedback der Präsi besprechen und Projekt damit etwas umplanen
-Mit Web-Gaze arbeiten da der Eyetracker nicht da ist
+Feedback der Präsi besprechen und Projekt damit etwas umplanen.
+Mit Web-Gaze arbeiten da der Eyetracker nicht da ist.
 
 ## Contributions
-Gemeinsam an Präsentation gearbeitet
+Gemeinsam an Präsentation gearbeitet.
