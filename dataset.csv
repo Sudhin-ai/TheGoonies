@@ -1,0 +1,2 @@
+participant,text_id,score,reading_time,fixation_count,fixation_duration_mean,gaze_dispersion,gaze_valid_ratio,text_gaze_ratio,head_motion,head_std
+proband_01,1,4,253.77316808700562,63,84.4800120194753,0.5298441807393806,1.0,0.582089552238806,,
