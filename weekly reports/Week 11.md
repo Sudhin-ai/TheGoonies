@@ -1,57 +1,28 @@
 # Week 11 Report — Machine Learning for Smart and Connected Systems (ML4SCS)
 
 ## Weekly Goal
-State the goal for next week.
-
-*Examples*
-•⁠  ⁠Define the project question
-•⁠  ⁠Explore the dataset
-•⁠  ⁠Build a baseline pipeline
+Skripte finalisieren, weitere Daten sammeln und Automation erstellen um unseren Testablauf zu verbessern und zu beschleunigen.
 
 ## Work Done This Week
 
-### 0. Project setup
-•⁠  ⁠How has the project question been refined?
-•⁠  ⁠What is the experimental setup?
-•⁠  ⁠What data will be used?
-•⁠  ⁠What tools or libraries are used?
-
-### 1. Data Work
-•⁠  ⁠What data was collected, explored, or cleaned?
-•⁠  ⁠What variables were identified?
-•⁠  ⁠Were there missing values or anomalies?
-
-### 2. Analysis / Modeling Work
-•⁠  ⁠What analysis was performed?
-•⁠  ⁠What baseline model or approach was tried?
-
-### 3. Repository / Documentation Work
-•⁠  ⁠What was added to GitHub?
-•⁠  ⁠Which files or folders were created?
-
-## Experiments Conducted
-
-| Experiment | Change Made | Result | Interpretation |
-|-----------|-------------|--------|----------------|
-| Exp 1 | Example change | Example result | Example interpretation |
+### Repository / Documentation Work
+screen_gaze_tracker.py --> finaler Skript
+train_model.py --> Modell trainieren
+predict.py 
+experiment.py --> Automation
+server.py --> Automation
+send_markers.py --> Sendet nach Beantworten der MC-Fragen die Ergebnisse, welche mit dem Antwort-Schlüssel abgeglichen werden um zu gucken, wie viele richtig beantweortet wurden
 
 ## Results
-•⁠  ⁠Results/metrics
-•⁠  ⁠Explanation of what the result means
+antworten Ordner zeigt die Antworten der jeweiligen Probanden
+scores.csv --> zeigt das Ergebnis der MC-Fragen der Probanden x/10 
 
 ## Challenges
-•⁠  ⁠What difficulties did the group face?
-•⁠  ⁠What did not work as expected?
+Nicht zufrieden mit der Vielfältigkeit der Texte, wollen die vielfältiger aufbauen da man sehr viele Texte lesen muss.
 
 ## Key Insights
-•⁠  ⁠What did you learn this week?
+Automation war sehr hilfreich um Zeit zu sparen und den Ablauf zu vereinfachen.
 
 ## Plan for Next Week
-•⁠  ⁠Next task 1
-•⁠  ⁠Next task 2
-•⁠  ⁠Next task 3
+Mehr Daten erheben und Texte vielfältiger aufbauen und finalsieren.
 
-## Contributions
-•⁠  ⁠Member 1:
-•⁠  ⁠Member 2:
-•⁠  ⁠Member 3:
