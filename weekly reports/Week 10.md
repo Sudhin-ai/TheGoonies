@@ -1,57 +1,26 @@
 # Week 10 Report — Machine Learning for Smart and Connected Systems (ML4SCS)
 
 ## Weekly Goal
-State the goal for next week.
-
-*Examples*
-•⁠  ⁠Define the project question
-•⁠  ⁠Explore the dataset
-•⁠  ⁠Build a baseline pipeline
+Eyetracking-Skript finalisieren, Skripte um Daten zu extrahieren erstellen und Daten erfassen
 
 ## Work Done This Week
 
-### 0. Project setup
-•⁠  ⁠How has the project question been refined?
-•⁠  ⁠What is the experimental setup?
-•⁠  ⁠What data will be used?
-•⁠  ⁠What tools or libraries are used?
-
-### 1. Data Work
-•⁠  ⁠What data was collected, explored, or cleaned?
-•⁠  ⁠What variables were identified?
-•⁠  ⁠Were there missing values or anomalies?
-
-### 2. Analysis / Modeling Work
-•⁠  ⁠What analysis was performed?
-•⁠  ⁠What baseline model or approach was tried?
-
-### 3. Repository / Documentation Work
-•⁠  ⁠What was added to GitHub?
-•⁠  ⁠Which files or folders were created?
-
-## Experiments Conducted
-
-| Experiment | Change Made | Result | Interpretation |
-|-----------|-------------|--------|----------------|
-| Exp 1 | Example change | Example result | Example interpretation |
+### Repository / Documentation Work
+screen_gaze_tracker(3) & (4) --> um den Eyetracker zu tracken um gazedaten zu generieren
+extract_features.py & features.py --> Um Gazedaten zu extrahieren
 
 ## Results
-•⁠  ⁠Results/metrics
-•⁠  ⁠Explanation of what the result means
+IMU-Daten_1 bis 10
+
+Das sind gesammlte Airpods IMU Daten während dem lesentest.
+
+Airpodsdaten zeigen dass sie wenig schwanken beim lesen und bei verschiedenen Scores trotzdem ähnlich bleiben und somit keine Aussagekraft über Aufmerksamkeit beim Lesen eines Textes haben.
 
 ## Challenges
-•⁠  ⁠What difficulties did the group face?
-•⁠  ⁠What did not work as expected?
+Wir müssen Skripte anpassen, dass sie keine Airpoddaten einbeziehen
 
 ## Key Insights
-•⁠  ⁠What did you learn this week?
+Airpodsdaten zeigen wenig Aussagekraft und werden deshalb iin diesem Projekt nicht mehr einbezogen
 
 ## Plan for Next Week
-•⁠  ⁠Next task 1
-•⁠  ⁠Next task 2
-•⁠  ⁠Next task 3
-
-## Contributions
-•⁠  ⁠Member 1:
-•⁠  ⁠Member 2:
-•⁠  ⁠Member 3:
+Skripte anpassen, zusätliche Codes zum trainieren des Modells und zum auswerten der Daten erstellen und weitere Texte für Testdurchläufe.
