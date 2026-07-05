@@ -1,0 +1,801 @@
+text_id,title,question_id,correct
+1,Licht im Dunkel: Biolumineszenz in der Tiefsee,1,B
+1,Licht im Dunkel: Biolumineszenz in der Tiefsee,2,A
+1,Licht im Dunkel: Biolumineszenz in der Tiefsee,3,A
+1,Licht im Dunkel: Biolumineszenz in der Tiefsee,4,D
+1,Licht im Dunkel: Biolumineszenz in der Tiefsee,5,A
+1,Licht im Dunkel: Biolumineszenz in der Tiefsee,6,C
+1,Licht im Dunkel: Biolumineszenz in der Tiefsee,7,B
+1,Licht im Dunkel: Biolumineszenz in der Tiefsee,8,C
+1,Licht im Dunkel: Biolumineszenz in der Tiefsee,9,D
+1,Licht im Dunkel: Biolumineszenz in der Tiefsee,10,B
+2,Die Bibliothek der vergessenen Sprachen,1,B
+2,Die Bibliothek der vergessenen Sprachen,2,D
+2,Die Bibliothek der vergessenen Sprachen,3,B
+2,Die Bibliothek der vergessenen Sprachen,4,A
+2,Die Bibliothek der vergessenen Sprachen,5,C
+2,Die Bibliothek der vergessenen Sprachen,6,A
+2,Die Bibliothek der vergessenen Sprachen,7,A
+2,Die Bibliothek der vergessenen Sprachen,8,D
+2,Die Bibliothek der vergessenen Sprachen,9,C
+2,Die Bibliothek der vergessenen Sprachen,10,C
+3,Quantenverschränkung und die Grenzen der klassischen Physik,1,A
+3,Quantenverschränkung und die Grenzen der klassischen Physik,2,A
+3,Quantenverschränkung und die Grenzen der klassischen Physik,3,C
+3,Quantenverschränkung und die Grenzen der klassischen Physik,4,D
+3,Quantenverschränkung und die Grenzen der klassischen Physik,5,C
+3,Quantenverschränkung und die Grenzen der klassischen Physik,6,D
+3,Quantenverschränkung und die Grenzen der klassischen Physik,7,B
+3,Quantenverschränkung und die Grenzen der klassischen Physik,8,C
+3,Quantenverschränkung und die Grenzen der klassischen Physik,9,A
+3,Quantenverschränkung und die Grenzen der klassischen Physik,10,B
+4,Das Voynich-Manuskript: Ein ungelöstes Rätsel der Schriftgeschichte,1,D
+4,Das Voynich-Manuskript: Ein ungelöstes Rätsel der Schriftgeschichte,2,A
+4,Das Voynich-Manuskript: Ein ungelöstes Rätsel der Schriftgeschichte,3,C
+4,Das Voynich-Manuskript: Ein ungelöstes Rätsel der Schriftgeschichte,4,B
+4,Das Voynich-Manuskript: Ein ungelöstes Rätsel der Schriftgeschichte,5,D
+4,Das Voynich-Manuskript: Ein ungelöstes Rätsel der Schriftgeschichte,6,B
+4,Das Voynich-Manuskript: Ein ungelöstes Rätsel der Schriftgeschichte,7,C
+4,Das Voynich-Manuskript: Ein ungelöstes Rätsel der Schriftgeschichte,8,D
+4,Das Voynich-Manuskript: Ein ungelöstes Rätsel der Schriftgeschichte,9,A
+4,Das Voynich-Manuskript: Ein ungelöstes Rätsel der Schriftgeschichte,10,B
+5,Feldnotizen aus dem Jahr 2187: Die stille Stadt,1,C
+5,Feldnotizen aus dem Jahr 2187: Die stille Stadt,2,B
+5,Feldnotizen aus dem Jahr 2187: Die stille Stadt,3,D
+5,Feldnotizen aus dem Jahr 2187: Die stille Stadt,4,D
+5,Feldnotizen aus dem Jahr 2187: Die stille Stadt,5,A
+5,Feldnotizen aus dem Jahr 2187: Die stille Stadt,6,D
+5,Feldnotizen aus dem Jahr 2187: Die stille Stadt,7,A
+5,Feldnotizen aus dem Jahr 2187: Die stille Stadt,8,C
+5,Feldnotizen aus dem Jahr 2187: Die stille Stadt,9,D
+5,Feldnotizen aus dem Jahr 2187: Die stille Stadt,10,B
+6,Schlaf und Gedächtniskonsolidierung: Was im schlafenden Gehirn geschieht,1,B
+6,Schlaf und Gedächtniskonsolidierung: Was im schlafenden Gehirn geschieht,2,B
+6,Schlaf und Gedächtniskonsolidierung: Was im schlafenden Gehirn geschieht,3,D
+6,Schlaf und Gedächtniskonsolidierung: Was im schlafenden Gehirn geschieht,4,C
+6,Schlaf und Gedächtniskonsolidierung: Was im schlafenden Gehirn geschieht,5,B
+6,Schlaf und Gedächtniskonsolidierung: Was im schlafenden Gehirn geschieht,6,D
+6,Schlaf und Gedächtniskonsolidierung: Was im schlafenden Gehirn geschieht,7,D
+6,Schlaf und Gedächtniskonsolidierung: Was im schlafenden Gehirn geschieht,8,C
+6,Schlaf und Gedächtniskonsolidierung: Was im schlafenden Gehirn geschieht,9,A
+6,Schlaf und Gedächtniskonsolidierung: Was im schlafenden Gehirn geschieht,10,A
+7,Die Kartographen des Meeres,1,C
+7,Die Kartographen des Meeres,2,C
+7,Die Kartographen des Meeres,3,B
+7,Die Kartographen des Meeres,4,A
+7,Die Kartographen des Meeres,5,D
+7,Die Kartographen des Meeres,6,B
+7,Die Kartographen des Meeres,7,D
+7,Die Kartographen des Meeres,8,D
+7,Die Kartographen des Meeres,9,C
+7,Die Kartographen des Meeres,10,A
+8,Epigenetik: Wie Erfahrungen die Genaktivität verändern,1,C
+8,Epigenetik: Wie Erfahrungen die Genaktivität verändern,2,B
+8,Epigenetik: Wie Erfahrungen die Genaktivität verändern,3,C
+8,Epigenetik: Wie Erfahrungen die Genaktivität verändern,4,A
+8,Epigenetik: Wie Erfahrungen die Genaktivität verändern,5,A
+8,Epigenetik: Wie Erfahrungen die Genaktivität verändern,6,B
+8,Epigenetik: Wie Erfahrungen die Genaktivität verändern,7,A
+8,Epigenetik: Wie Erfahrungen die Genaktivität verändern,8,C
+8,Epigenetik: Wie Erfahrungen die Genaktivität verändern,9,D
+8,Epigenetik: Wie Erfahrungen die Genaktivität verändern,10,D
+9,Das Protokoll der Außerordentlichen Sitzung,1,B
+9,Das Protokoll der Außerordentlichen Sitzung,2,A
+9,Das Protokoll der Außerordentlichen Sitzung,3,C
+9,Das Protokoll der Außerordentlichen Sitzung,4,D
+9,Das Protokoll der Außerordentlichen Sitzung,5,B
+9,Das Protokoll der Außerordentlichen Sitzung,6,A
+9,Das Protokoll der Außerordentlichen Sitzung,7,A
+9,Das Protokoll der Außerordentlichen Sitzung,8,D
+9,Das Protokoll der Außerordentlichen Sitzung,9,C
+9,Das Protokoll der Außerordentlichen Sitzung,10,D
+10,Der innere Kompass: Wie Zugvögel das Magnetfeld der Erde nutzen,1,D
+10,Der innere Kompass: Wie Zugvögel das Magnetfeld der Erde nutzen,2,B
+10,Der innere Kompass: Wie Zugvögel das Magnetfeld der Erde nutzen,3,C
+10,Der innere Kompass: Wie Zugvögel das Magnetfeld der Erde nutzen,4,B
+10,Der innere Kompass: Wie Zugvögel das Magnetfeld der Erde nutzen,5,B
+10,Der innere Kompass: Wie Zugvögel das Magnetfeld der Erde nutzen,6,C
+10,Der innere Kompass: Wie Zugvögel das Magnetfeld der Erde nutzen,7,D
+10,Der innere Kompass: Wie Zugvögel das Magnetfeld der Erde nutzen,8,A
+10,Der innere Kompass: Wie Zugvögel das Magnetfeld der Erde nutzen,9,A
+10,Der innere Kompass: Wie Zugvögel das Magnetfeld der Erde nutzen,10,B
+11,Leben am Limit: Mikroorganismen in der Antarktis,1,D
+11,Leben am Limit: Mikroorganismen in der Antarktis,2,A
+11,Leben am Limit: Mikroorganismen in der Antarktis,3,C
+11,Leben am Limit: Mikroorganismen in der Antarktis,4,A
+11,Leben am Limit: Mikroorganismen in der Antarktis,5,B
+11,Leben am Limit: Mikroorganismen in der Antarktis,6,C
+11,Leben am Limit: Mikroorganismen in der Antarktis,7,D
+11,Leben am Limit: Mikroorganismen in der Antarktis,8,D
+11,Leben am Limit: Mikroorganismen in der Antarktis,9,B
+11,Leben am Limit: Mikroorganismen in der Antarktis,10,B
+12,Brief an einen Planeten,1,A
+12,Brief an einen Planeten,2,A
+12,Brief an einen Planeten,3,B
+12,Brief an einen Planeten,4,A
+12,Brief an einen Planeten,5,C
+12,Brief an einen Planeten,6,D
+12,Brief an einen Planeten,7,D
+12,Brief an einen Planeten,8,B
+12,Brief an einen Planeten,9,D
+12,Brief an einen Planeten,10,C
+13,Das unsichtbare Netzwerk: Mykorrhizapilze und die Kommunikation der Bäume,1,D
+13,Das unsichtbare Netzwerk: Mykorrhizapilze und die Kommunikation der Bäume,2,B
+13,Das unsichtbare Netzwerk: Mykorrhizapilze und die Kommunikation der Bäume,3,A
+13,Das unsichtbare Netzwerk: Mykorrhizapilze und die Kommunikation der Bäume,4,B
+13,Das unsichtbare Netzwerk: Mykorrhizapilze und die Kommunikation der Bäume,5,A
+13,Das unsichtbare Netzwerk: Mykorrhizapilze und die Kommunikation der Bäume,6,C
+13,Das unsichtbare Netzwerk: Mykorrhizapilze und die Kommunikation der Bäume,7,B
+13,Das unsichtbare Netzwerk: Mykorrhizapilze und die Kommunikation der Bäume,8,D
+13,Das unsichtbare Netzwerk: Mykorrhizapilze und die Kommunikation der Bäume,9,C
+13,Das unsichtbare Netzwerk: Mykorrhizapilze und die Kommunikation der Bäume,10,C
+14,Die letzte Frage des Orakels,1,D
+14,Die letzte Frage des Orakels,2,C
+14,Die letzte Frage des Orakels,3,A
+14,Die letzte Frage des Orakels,4,B
+14,Die letzte Frage des Orakels,5,A
+14,Die letzte Frage des Orakels,6,B
+14,Die letzte Frage des Orakels,7,D
+14,Die letzte Frage des Orakels,8,D
+14,Die letzte Frage des Orakels,9,A
+14,Die letzte Frage des Orakels,10,C
+15,Synästhesie: Wenn Töne Farben haben und Zahlen Persönlichkeiten,1,A
+15,Synästhesie: Wenn Töne Farben haben und Zahlen Persönlichkeiten,2,C
+15,Synästhesie: Wenn Töne Farben haben und Zahlen Persönlichkeiten,3,A
+15,Synästhesie: Wenn Töne Farben haben und Zahlen Persönlichkeiten,4,D
+15,Synästhesie: Wenn Töne Farben haben und Zahlen Persönlichkeiten,5,C
+15,Synästhesie: Wenn Töne Farben haben und Zahlen Persönlichkeiten,6,A
+15,Synästhesie: Wenn Töne Farben haben und Zahlen Persönlichkeiten,7,B
+15,Synästhesie: Wenn Töne Farben haben und Zahlen Persönlichkeiten,8,B
+15,Synästhesie: Wenn Töne Farben haben und Zahlen Persönlichkeiten,9,D
+15,Synästhesie: Wenn Töne Farben haben und Zahlen Persönlichkeiten,10,A
+16,Die Umfrage,1,A
+16,Die Umfrage,2,D
+16,Die Umfrage,3,B
+16,Die Umfrage,4,C
+16,Die Umfrage,5,D
+16,Die Umfrage,6,C
+16,Die Umfrage,7,B
+16,Die Umfrage,8,A
+16,Die Umfrage,9,D
+16,Die Umfrage,10,A
+17,Wie Kinder Sprache lernen: Erkenntnisse der Spracherwerbsforschung,1,B
+17,Wie Kinder Sprache lernen: Erkenntnisse der Spracherwerbsforschung,2,D
+17,Wie Kinder Sprache lernen: Erkenntnisse der Spracherwerbsforschung,3,D
+17,Wie Kinder Sprache lernen: Erkenntnisse der Spracherwerbsforschung,4,C
+17,Wie Kinder Sprache lernen: Erkenntnisse der Spracherwerbsforschung,5,B
+17,Wie Kinder Sprache lernen: Erkenntnisse der Spracherwerbsforschung,6,D
+17,Wie Kinder Sprache lernen: Erkenntnisse der Spracherwerbsforschung,7,C
+17,Wie Kinder Sprache lernen: Erkenntnisse der Spracherwerbsforschung,8,A
+17,Wie Kinder Sprache lernen: Erkenntnisse der Spracherwerbsforschung,9,A
+17,Wie Kinder Sprache lernen: Erkenntnisse der Spracherwerbsforschung,10,C
+18,Der Übersetzer,1,D
+18,Der Übersetzer,2,B
+18,Der Übersetzer,3,A
+18,Der Übersetzer,4,A
+18,Der Übersetzer,5,C
+18,Der Übersetzer,6,A
+18,Der Übersetzer,7,C
+18,Der Übersetzer,8,A
+18,Der Übersetzer,9,B
+18,Der Übersetzer,10,D
+19,Schlaf im Tierreich: Von schlafenden Delfinen und schlaflosen Fröschen,1,B
+19,Schlaf im Tierreich: Von schlafenden Delfinen und schlaflosen Fröschen,2,A
+19,Schlaf im Tierreich: Von schlafenden Delfinen und schlaflosen Fröschen,3,C
+19,Schlaf im Tierreich: Von schlafenden Delfinen und schlaflosen Fröschen,4,D
+19,Schlaf im Tierreich: Von schlafenden Delfinen und schlaflosen Fröschen,5,B
+19,Schlaf im Tierreich: Von schlafenden Delfinen und schlaflosen Fröschen,6,A
+19,Schlaf im Tierreich: Von schlafenden Delfinen und schlaflosen Fröschen,7,D
+19,Schlaf im Tierreich: Von schlafenden Delfinen und schlaflosen Fröschen,8,C
+19,Schlaf im Tierreich: Von schlafenden Delfinen und schlaflosen Fröschen,9,C
+19,Schlaf im Tierreich: Von schlafenden Delfinen und schlaflosen Fröschen,10,A
+20,Das Schiff ohne Namen,1,B
+20,Das Schiff ohne Namen,2,C
+20,Das Schiff ohne Namen,3,C
+20,Das Schiff ohne Namen,4,A
+20,Das Schiff ohne Namen,5,B
+20,Das Schiff ohne Namen,6,D
+20,Das Schiff ohne Namen,7,A
+20,Das Schiff ohne Namen,8,D
+20,Das Schiff ohne Namen,9,A
+20,Das Schiff ohne Namen,10,D
+21,Fermentation: Die älteste Biotechnologie der Menschheit,1,A
+21,Fermentation: Die älteste Biotechnologie der Menschheit,2,C
+21,Fermentation: Die älteste Biotechnologie der Menschheit,3,B
+21,Fermentation: Die älteste Biotechnologie der Menschheit,4,D
+21,Fermentation: Die älteste Biotechnologie der Menschheit,5,C
+21,Fermentation: Die älteste Biotechnologie der Menschheit,6,C
+21,Fermentation: Die älteste Biotechnologie der Menschheit,7,B
+21,Fermentation: Die älteste Biotechnologie der Menschheit,8,A
+21,Fermentation: Die älteste Biotechnologie der Menschheit,9,D
+21,Fermentation: Die älteste Biotechnologie der Menschheit,10,A
+22,Das Museum der kleinen Katastrophen,1,C
+22,Das Museum der kleinen Katastrophen,2,C
+22,Das Museum der kleinen Katastrophen,3,A
+22,Das Museum der kleinen Katastrophen,4,B
+22,Das Museum der kleinen Katastrophen,5,A
+22,Das Museum der kleinen Katastrophen,6,C
+22,Das Museum der kleinen Katastrophen,7,D
+22,Das Museum der kleinen Katastrophen,8,A
+22,Das Museum der kleinen Katastrophen,9,B
+22,Das Museum der kleinen Katastrophen,10,D
+23,Schwarze Löcher: Gravitation am Limit,1,B
+23,Schwarze Löcher: Gravitation am Limit,2,C
+23,Schwarze Löcher: Gravitation am Limit,3,A
+23,Schwarze Löcher: Gravitation am Limit,4,D
+23,Schwarze Löcher: Gravitation am Limit,5,B
+23,Schwarze Löcher: Gravitation am Limit,6,C
+23,Schwarze Löcher: Gravitation am Limit,7,D
+23,Schwarze Löcher: Gravitation am Limit,8,C
+23,Schwarze Löcher: Gravitation am Limit,9,A
+23,Schwarze Löcher: Gravitation am Limit,10,C
+24,Der Architekt des Vergessens,1,A
+24,Der Architekt des Vergessens,2,B
+24,Der Architekt des Vergessens,3,A
+24,Der Architekt des Vergessens,4,A
+24,Der Architekt des Vergessens,5,C
+24,Der Architekt des Vergessens,6,C
+24,Der Architekt des Vergessens,7,B
+24,Der Architekt des Vergessens,8,A
+24,Der Architekt des Vergessens,9,D
+24,Der Architekt des Vergessens,10,D
+25,"Pilze zwischen den Welten: Zersetzung, Verbindung und das Reich der Fungi",1,B
+25,"Pilze zwischen den Welten: Zersetzung, Verbindung und das Reich der Fungi",2,A
+25,"Pilze zwischen den Welten: Zersetzung, Verbindung und das Reich der Fungi",3,C
+25,"Pilze zwischen den Welten: Zersetzung, Verbindung und das Reich der Fungi",4,C
+25,"Pilze zwischen den Welten: Zersetzung, Verbindung und das Reich der Fungi",5,D
+25,"Pilze zwischen den Welten: Zersetzung, Verbindung und das Reich der Fungi",6,D
+25,"Pilze zwischen den Welten: Zersetzung, Verbindung und das Reich der Fungi",7,C
+25,"Pilze zwischen den Welten: Zersetzung, Verbindung und das Reich der Fungi",8,D
+25,"Pilze zwischen den Welten: Zersetzung, Verbindung und das Reich der Fungi",9,A
+25,"Pilze zwischen den Welten: Zersetzung, Verbindung und das Reich der Fungi",10,B
+26,Die Erfinderin,1,C
+26,Die Erfinderin,2,A
+26,Die Erfinderin,3,B
+26,Die Erfinderin,4,D
+26,Die Erfinderin,5,D
+26,Die Erfinderin,6,A
+26,Die Erfinderin,7,D
+26,Die Erfinderin,8,B
+26,Die Erfinderin,9,C
+26,Die Erfinderin,10,A
+27,Korallenriffe unter Druck: Ökologie und Klimafolgen,1,C
+27,Korallenriffe unter Druck: Ökologie und Klimafolgen,2,A
+27,Korallenriffe unter Druck: Ökologie und Klimafolgen,3,C
+27,Korallenriffe unter Druck: Ökologie und Klimafolgen,4,C
+27,Korallenriffe unter Druck: Ökologie und Klimafolgen,5,A
+27,Korallenriffe unter Druck: Ökologie und Klimafolgen,6,D
+27,Korallenriffe unter Druck: Ökologie und Klimafolgen,7,C
+27,Korallenriffe unter Druck: Ökologie und Klimafolgen,8,B
+27,Korallenriffe unter Druck: Ökologie und Klimafolgen,9,B
+27,Korallenriffe unter Druck: Ökologie und Klimafolgen,10,D
+28,Das Gespräch der Dinge,1,C
+28,Das Gespräch der Dinge,2,C
+28,Das Gespräch der Dinge,3,D
+28,Das Gespräch der Dinge,4,B
+28,Das Gespräch der Dinge,5,A
+28,Das Gespräch der Dinge,6,B
+28,Das Gespräch der Dinge,7,D
+28,Das Gespräch der Dinge,8,A
+28,Das Gespräch der Dinge,9,A
+28,Das Gespräch der Dinge,10,C
+29,Neuroplastizität: Das sich verändernde Gehirn,1,A
+29,Neuroplastizität: Das sich verändernde Gehirn,2,C
+29,Neuroplastizität: Das sich verändernde Gehirn,3,D
+29,Neuroplastizität: Das sich verändernde Gehirn,4,D
+29,Neuroplastizität: Das sich verändernde Gehirn,5,A
+29,Neuroplastizität: Das sich verändernde Gehirn,6,A
+29,Neuroplastizität: Das sich verändernde Gehirn,7,B
+29,Neuroplastizität: Das sich verändernde Gehirn,8,B
+29,Neuroplastizität: Das sich verändernde Gehirn,9,C
+29,Neuroplastizität: Das sich verändernde Gehirn,10,D
+30,Der Sammler von Morgen,1,B
+30,Der Sammler von Morgen,2,D
+30,Der Sammler von Morgen,3,C
+30,Der Sammler von Morgen,4,D
+30,Der Sammler von Morgen,5,B
+30,Der Sammler von Morgen,6,A
+30,Der Sammler von Morgen,7,C
+30,Der Sammler von Morgen,8,D
+30,Der Sammler von Morgen,9,A
+30,Der Sammler von Morgen,10,C
+31,Radioaktiver Zerfall und die Kunst der Datierung,1,B
+31,Radioaktiver Zerfall und die Kunst der Datierung,2,C
+31,Radioaktiver Zerfall und die Kunst der Datierung,3,C
+31,Radioaktiver Zerfall und die Kunst der Datierung,4,D
+31,Radioaktiver Zerfall und die Kunst der Datierung,5,C
+31,Radioaktiver Zerfall und die Kunst der Datierung,6,A
+31,Radioaktiver Zerfall und die Kunst der Datierung,7,B
+31,Radioaktiver Zerfall und die Kunst der Datierung,8,A
+31,Radioaktiver Zerfall und die Kunst der Datierung,9,B
+31,Radioaktiver Zerfall und die Kunst der Datierung,10,D
+32,Der Gärtner der Stunden,1,A
+32,Der Gärtner der Stunden,2,D
+32,Der Gärtner der Stunden,3,A
+32,Der Gärtner der Stunden,4,B
+32,Der Gärtner der Stunden,5,D
+32,Der Gärtner der Stunden,6,B
+32,Der Gärtner der Stunden,7,D
+32,Der Gärtner der Stunden,8,C
+32,Der Gärtner der Stunden,9,B
+32,Der Gärtner der Stunden,10,C
+33,Schlafparalyse und Hypnagogie: An der Grenze zwischen Schlaf und Wachen,1,C
+33,Schlafparalyse und Hypnagogie: An der Grenze zwischen Schlaf und Wachen,2,B
+33,Schlafparalyse und Hypnagogie: An der Grenze zwischen Schlaf und Wachen,3,B
+33,Schlafparalyse und Hypnagogie: An der Grenze zwischen Schlaf und Wachen,4,A
+33,Schlafparalyse und Hypnagogie: An der Grenze zwischen Schlaf und Wachen,5,D
+33,Schlafparalyse und Hypnagogie: An der Grenze zwischen Schlaf und Wachen,6,D
+33,Schlafparalyse und Hypnagogie: An der Grenze zwischen Schlaf und Wachen,7,B
+33,Schlafparalyse und Hypnagogie: An der Grenze zwischen Schlaf und Wachen,8,C
+33,Schlafparalyse und Hypnagogie: An der Grenze zwischen Schlaf und Wachen,9,A
+33,Schlafparalyse und Hypnagogie: An der Grenze zwischen Schlaf und Wachen,10,B
+34,Das Inventar,1,B
+34,Das Inventar,2,D
+34,Das Inventar,3,A
+34,Das Inventar,4,C
+34,Das Inventar,5,B
+34,Das Inventar,6,D
+34,Das Inventar,7,B
+34,Das Inventar,8,A
+34,Das Inventar,9,C
+34,Das Inventar,10,B
+35,Kosmische Hintergrundstrahlung: Das Echo des Urknalls,1,A
+35,Kosmische Hintergrundstrahlung: Das Echo des Urknalls,2,A
+35,Kosmische Hintergrundstrahlung: Das Echo des Urknalls,3,C
+35,Kosmische Hintergrundstrahlung: Das Echo des Urknalls,4,D
+35,Kosmische Hintergrundstrahlung: Das Echo des Urknalls,5,D
+35,Kosmische Hintergrundstrahlung: Das Echo des Urknalls,6,B
+35,Kosmische Hintergrundstrahlung: Das Echo des Urknalls,7,C
+35,Kosmische Hintergrundstrahlung: Das Echo des Urknalls,8,A
+35,Kosmische Hintergrundstrahlung: Das Echo des Urknalls,9,B
+35,Kosmische Hintergrundstrahlung: Das Echo des Urknalls,10,B
+36,"Die Sprache der Bienen: Tanz, Information und kollektive Entscheidung",1,D
+36,"Die Sprache der Bienen: Tanz, Information und kollektive Entscheidung",2,C
+36,"Die Sprache der Bienen: Tanz, Information und kollektive Entscheidung",3,A
+36,"Die Sprache der Bienen: Tanz, Information und kollektive Entscheidung",4,B
+36,"Die Sprache der Bienen: Tanz, Information und kollektive Entscheidung",5,A
+36,"Die Sprache der Bienen: Tanz, Information und kollektive Entscheidung",6,C
+36,"Die Sprache der Bienen: Tanz, Information und kollektive Entscheidung",7,B
+36,"Die Sprache der Bienen: Tanz, Information und kollektive Entscheidung",8,D
+36,"Die Sprache der Bienen: Tanz, Information und kollektive Entscheidung",9,C
+36,"Die Sprache der Bienen: Tanz, Information und kollektive Entscheidung",10,C
+37,Der letzte Zug nach Nirgendswo,1,A
+37,Der letzte Zug nach Nirgendswo,2,C
+37,Der letzte Zug nach Nirgendswo,3,B
+37,Der letzte Zug nach Nirgendswo,4,C
+37,Der letzte Zug nach Nirgendswo,5,A
+37,Der letzte Zug nach Nirgendswo,6,C
+37,Der letzte Zug nach Nirgendswo,7,C
+37,Der letzte Zug nach Nirgendswo,8,B
+37,Der letzte Zug nach Nirgendswo,9,D
+37,Der letzte Zug nach Nirgendswo,10,D
+38,Ozeanströmungen und das globale Förderband,1,C
+38,Ozeanströmungen und das globale Förderband,2,C
+38,Ozeanströmungen und das globale Förderband,3,A
+38,Ozeanströmungen und das globale Förderband,4,D
+38,Ozeanströmungen und das globale Förderband,5,A
+38,Ozeanströmungen und das globale Förderband,6,A
+38,Ozeanströmungen und das globale Förderband,7,B
+38,Ozeanströmungen und das globale Förderband,8,D
+38,Ozeanströmungen und das globale Förderband,9,B
+38,Ozeanströmungen und das globale Förderband,10,B
+39,Der Übersetzer von Stille,1,B
+39,Der Übersetzer von Stille,2,D
+39,Der Übersetzer von Stille,3,A
+39,Der Übersetzer von Stille,4,A
+39,Der Übersetzer von Stille,5,C
+39,Der Übersetzer von Stille,6,D
+39,Der Übersetzer von Stille,7,A
+39,Der Übersetzer von Stille,8,B
+39,Der Übersetzer von Stille,9,B
+39,Der Übersetzer von Stille,10,C
+40,Tardigrada: Die unzerstörbaren Wasserbären,1,A
+40,Tardigrada: Die unzerstörbaren Wasserbären,2,D
+40,Tardigrada: Die unzerstörbaren Wasserbären,3,B
+40,Tardigrada: Die unzerstörbaren Wasserbären,4,D
+40,Tardigrada: Die unzerstörbaren Wasserbären,5,C
+40,Tardigrada: Die unzerstörbaren Wasserbären,6,B
+40,Tardigrada: Die unzerstörbaren Wasserbären,7,C
+40,Tardigrada: Die unzerstörbaren Wasserbären,8,A
+40,Tardigrada: Die unzerstörbaren Wasserbären,9,C
+40,Tardigrada: Die unzerstörbaren Wasserbären,10,A
+41,Mimikry und Täuschung im Tierreich,1,A
+41,Mimikry und Täuschung im Tierreich,2,B
+41,Mimikry und Täuschung im Tierreich,3,B
+41,Mimikry und Täuschung im Tierreich,4,D
+41,Mimikry und Täuschung im Tierreich,5,A
+41,Mimikry und Täuschung im Tierreich,6,D
+41,Mimikry und Täuschung im Tierreich,7,C
+41,Mimikry und Täuschung im Tierreich,8,D
+41,Mimikry und Täuschung im Tierreich,9,A
+41,Mimikry und Täuschung im Tierreich,10,C
+42,Das Haus am Ende der Karte,1,B
+42,Das Haus am Ende der Karte,2,A
+42,Das Haus am Ende der Karte,3,C
+42,Das Haus am Ende der Karte,4,D
+42,Das Haus am Ende der Karte,5,C
+42,Das Haus am Ende der Karte,6,C
+42,Das Haus am Ende der Karte,7,A
+42,Das Haus am Ende der Karte,8,A
+42,Das Haus am Ende der Karte,9,B
+42,Das Haus am Ende der Karte,10,D
+43,Lichtverschmutzung und ihre Folgen für Ökosysteme,1,A
+43,Lichtverschmutzung und ihre Folgen für Ökosysteme,2,B
+43,Lichtverschmutzung und ihre Folgen für Ökosysteme,3,A
+43,Lichtverschmutzung und ihre Folgen für Ökosysteme,4,C
+43,Lichtverschmutzung und ihre Folgen für Ökosysteme,5,C
+43,Lichtverschmutzung und ihre Folgen für Ökosysteme,6,D
+43,Lichtverschmutzung und ihre Folgen für Ökosysteme,7,C
+43,Lichtverschmutzung und ihre Folgen für Ökosysteme,8,C
+43,Lichtverschmutzung und ihre Folgen für Ökosysteme,9,B
+43,Lichtverschmutzung und ihre Folgen für Ökosysteme,10,D
+44,Der Zeuge,1,A
+44,Der Zeuge,2,B
+44,Der Zeuge,3,C
+44,Der Zeuge,4,D
+44,Der Zeuge,5,D
+44,Der Zeuge,6,A
+44,Der Zeuge,7,D
+44,Der Zeuge,8,B
+44,Der Zeuge,9,C
+44,Der Zeuge,10,D
+45,Gravitationswellen: Kräusel in der Raumzeit,1,B
+45,Gravitationswellen: Kräusel in der Raumzeit,2,A
+45,Gravitationswellen: Kräusel in der Raumzeit,3,C
+45,Gravitationswellen: Kräusel in der Raumzeit,4,D
+45,Gravitationswellen: Kräusel in der Raumzeit,5,B
+45,Gravitationswellen: Kräusel in der Raumzeit,6,B
+45,Gravitationswellen: Kräusel in der Raumzeit,7,C
+45,Gravitationswellen: Kräusel in der Raumzeit,8,A
+45,Gravitationswellen: Kräusel in der Raumzeit,9,D
+45,Gravitationswellen: Kräusel in der Raumzeit,10,B
+46,Das Archiv der Geräusche,1,D
+46,Das Archiv der Geräusche,2,A
+46,Das Archiv der Geräusche,3,C
+46,Das Archiv der Geräusche,4,B
+46,Das Archiv der Geräusche,5,B
+46,Das Archiv der Geräusche,6,C
+46,Das Archiv der Geräusche,7,D
+46,Das Archiv der Geräusche,8,D
+46,Das Archiv der Geräusche,9,A
+46,Das Archiv der Geräusche,10,D
+47,Permafrost: Der gefrorene Boden und sein Tauen,1,D
+47,Permafrost: Der gefrorene Boden und sein Tauen,2,B
+47,Permafrost: Der gefrorene Boden und sein Tauen,3,C
+47,Permafrost: Der gefrorene Boden und sein Tauen,4,C
+47,Permafrost: Der gefrorene Boden und sein Tauen,5,D
+47,Permafrost: Der gefrorene Boden und sein Tauen,6,A
+47,Permafrost: Der gefrorene Boden und sein Tauen,7,A
+47,Permafrost: Der gefrorene Boden und sein Tauen,8,C
+47,Permafrost: Der gefrorene Boden und sein Tauen,9,B
+47,Permafrost: Der gefrorene Boden und sein Tauen,10,A
+48,Die Expertin für das Ende,1,C
+48,Die Expertin für das Ende,2,A
+48,Die Expertin für das Ende,3,A
+48,Die Expertin für das Ende,4,B
+48,Die Expertin für das Ende,5,B
+48,Die Expertin für das Ende,6,C
+48,Die Expertin für das Ende,7,A
+48,Die Expertin für das Ende,8,C
+48,Die Expertin für das Ende,9,D
+48,Die Expertin für das Ende,10,D
+49,Tiefenhirnstimulation: Strom gegen Zittern und Depression,1,D
+49,Tiefenhirnstimulation: Strom gegen Zittern und Depression,2,C
+49,Tiefenhirnstimulation: Strom gegen Zittern und Depression,3,B
+49,Tiefenhirnstimulation: Strom gegen Zittern und Depression,4,A
+49,Tiefenhirnstimulation: Strom gegen Zittern und Depression,5,C
+49,Tiefenhirnstimulation: Strom gegen Zittern und Depression,6,B
+49,Tiefenhirnstimulation: Strom gegen Zittern und Depression,7,B
+49,Tiefenhirnstimulation: Strom gegen Zittern und Depression,8,C
+49,Tiefenhirnstimulation: Strom gegen Zittern und Depression,9,D
+49,Tiefenhirnstimulation: Strom gegen Zittern und Depression,10,A
+50,Das Wörterbuch der verlorenen Wörter,1,A
+50,Das Wörterbuch der verlorenen Wörter,2,B
+50,Das Wörterbuch der verlorenen Wörter,3,C
+50,Das Wörterbuch der verlorenen Wörter,4,D
+50,Das Wörterbuch der verlorenen Wörter,5,C
+50,Das Wörterbuch der verlorenen Wörter,6,A
+50,Das Wörterbuch der verlorenen Wörter,7,D
+50,Das Wörterbuch der verlorenen Wörter,8,A
+50,Das Wörterbuch der verlorenen Wörter,9,B
+50,Das Wörterbuch der verlorenen Wörter,10,B
+51,Chronobiologie: Die innere Uhr des Lebens,1,B
+51,Chronobiologie: Die innere Uhr des Lebens,2,A
+51,Chronobiologie: Die innere Uhr des Lebens,3,C
+51,Chronobiologie: Die innere Uhr des Lebens,4,D
+51,Chronobiologie: Die innere Uhr des Lebens,5,A
+51,Chronobiologie: Die innere Uhr des Lebens,6,D
+51,Chronobiologie: Die innere Uhr des Lebens,7,D
+51,Chronobiologie: Die innere Uhr des Lebens,8,C
+51,Chronobiologie: Die innere Uhr des Lebens,9,D
+51,Chronobiologie: Die innere Uhr des Lebens,10,B
+52,Die Brücke der Namen,1,D
+52,Die Brücke der Namen,2,C
+52,Die Brücke der Namen,3,A
+52,Die Brücke der Namen,4,D
+52,Die Brücke der Namen,5,A
+52,Die Brücke der Namen,6,D
+52,Die Brücke der Namen,7,B
+52,Die Brücke der Namen,8,C
+52,Die Brücke der Namen,9,C
+52,Die Brücke der Namen,10,B
+53,Prionen: Wenn Proteine zur Gefahr werden,1,A
+53,Prionen: Wenn Proteine zur Gefahr werden,2,B
+53,Prionen: Wenn Proteine zur Gefahr werden,3,D
+53,Prionen: Wenn Proteine zur Gefahr werden,4,C
+53,Prionen: Wenn Proteine zur Gefahr werden,5,C
+53,Prionen: Wenn Proteine zur Gefahr werden,6,A
+53,Prionen: Wenn Proteine zur Gefahr werden,7,D
+53,Prionen: Wenn Proteine zur Gefahr werden,8,B
+53,Prionen: Wenn Proteine zur Gefahr werden,9,D
+53,Prionen: Wenn Proteine zur Gefahr werden,10,B
+54,Das Konzert für niemanden,1,D
+54,Das Konzert für niemanden,2,A
+54,Das Konzert für niemanden,3,D
+54,Das Konzert für niemanden,4,B
+54,Das Konzert für niemanden,5,A
+54,Das Konzert für niemanden,6,A
+54,Das Konzert für niemanden,7,B
+54,Das Konzert für niemanden,8,C
+54,Das Konzert für niemanden,9,D
+54,Das Konzert für niemanden,10,C
+55,"Atmosphärische Optik: Halos, Regenbögen und blaue Stunden",1,C
+55,"Atmosphärische Optik: Halos, Regenbögen und blaue Stunden",2,B
+55,"Atmosphärische Optik: Halos, Regenbögen und blaue Stunden",3,A
+55,"Atmosphärische Optik: Halos, Regenbögen und blaue Stunden",4,D
+55,"Atmosphärische Optik: Halos, Regenbögen und blaue Stunden",5,A
+55,"Atmosphärische Optik: Halos, Regenbögen und blaue Stunden",6,C
+55,"Atmosphärische Optik: Halos, Regenbögen und blaue Stunden",7,A
+55,"Atmosphärische Optik: Halos, Regenbögen und blaue Stunden",8,B
+55,"Atmosphärische Optik: Halos, Regenbögen und blaue Stunden",9,D
+55,"Atmosphärische Optik: Halos, Regenbögen und blaue Stunden",10,D
+56,Der Übersetzer der Träume,1,B
+56,Der Übersetzer der Träume,2,A
+56,Der Übersetzer der Träume,3,C
+56,Der Übersetzer der Träume,4,A
+56,Der Übersetzer der Träume,5,B
+56,Der Übersetzer der Träume,6,C
+56,Der Übersetzer der Träume,7,D
+56,Der Übersetzer der Träume,8,C
+56,Der Übersetzer der Träume,9,D
+56,Der Übersetzer der Träume,10,C
+57,Bioakustik: Die Sprache der Natur,1,A
+57,Bioakustik: Die Sprache der Natur,2,D
+57,Bioakustik: Die Sprache der Natur,3,C
+57,Bioakustik: Die Sprache der Natur,4,D
+57,Bioakustik: Die Sprache der Natur,5,B
+57,Bioakustik: Die Sprache der Natur,6,D
+57,Bioakustik: Die Sprache der Natur,7,A
+57,Bioakustik: Die Sprache der Natur,8,B
+57,Bioakustik: Die Sprache der Natur,9,C
+57,Bioakustik: Die Sprache der Natur,10,B
+58,"Das Haus, das sich erinnerte",1,B
+58,"Das Haus, das sich erinnerte",2,C
+58,"Das Haus, das sich erinnerte",3,C
+58,"Das Haus, das sich erinnerte",4,D
+58,"Das Haus, das sich erinnerte",5,D
+58,"Das Haus, das sich erinnerte",6,A
+58,"Das Haus, das sich erinnerte",7,B
+58,"Das Haus, das sich erinnerte",8,C
+58,"Das Haus, das sich erinnerte",9,A
+58,"Das Haus, das sich erinnerte",10,A
+59,Gletscherkunde: Archive aus Eis,1,D
+59,Gletscherkunde: Archive aus Eis,2,C
+59,Gletscherkunde: Archive aus Eis,3,D
+59,Gletscherkunde: Archive aus Eis,4,C
+59,Gletscherkunde: Archive aus Eis,5,B
+59,Gletscherkunde: Archive aus Eis,6,B
+59,Gletscherkunde: Archive aus Eis,7,C
+59,Gletscherkunde: Archive aus Eis,8,D
+59,Gletscherkunde: Archive aus Eis,9,A
+59,Gletscherkunde: Archive aus Eis,10,A
+60,Die Sammlung der letzten Sätze,1,B
+60,Die Sammlung der letzten Sätze,2,D
+60,Die Sammlung der letzten Sätze,3,C
+60,Die Sammlung der letzten Sätze,4,D
+60,Die Sammlung der letzten Sätze,5,A
+60,Die Sammlung der letzten Sätze,6,A
+60,Die Sammlung der letzten Sätze,7,C
+60,Die Sammlung der letzten Sätze,8,C
+60,Die Sammlung der letzten Sätze,9,B
+60,Die Sammlung der letzten Sätze,10,B
+61,Biomimetik: Was die Natur Ingenieuren lehrt,1,B
+61,Biomimetik: Was die Natur Ingenieuren lehrt,2,A
+61,Biomimetik: Was die Natur Ingenieuren lehrt,3,A
+61,Biomimetik: Was die Natur Ingenieuren lehrt,4,D
+61,Biomimetik: Was die Natur Ingenieuren lehrt,5,B
+61,Biomimetik: Was die Natur Ingenieuren lehrt,6,A
+61,Biomimetik: Was die Natur Ingenieuren lehrt,7,C
+61,Biomimetik: Was die Natur Ingenieuren lehrt,8,D
+61,Biomimetik: Was die Natur Ingenieuren lehrt,9,C
+61,Biomimetik: Was die Natur Ingenieuren lehrt,10,B
+62,Der Raum der Möglichkeiten,1,C
+62,Der Raum der Möglichkeiten,2,C
+62,Der Raum der Möglichkeiten,3,B
+62,Der Raum der Möglichkeiten,4,C
+62,Der Raum der Möglichkeiten,5,D
+62,Der Raum der Möglichkeiten,6,C
+62,Der Raum der Möglichkeiten,7,D
+62,Der Raum der Möglichkeiten,8,B
+62,Der Raum der Möglichkeiten,9,A
+62,Der Raum der Möglichkeiten,10,A
+63,Spintronik: Wenn Elektronen eine Drehrichtung haben,1,A
+63,Spintronik: Wenn Elektronen eine Drehrichtung haben,2,C
+63,Spintronik: Wenn Elektronen eine Drehrichtung haben,3,A
+63,Spintronik: Wenn Elektronen eine Drehrichtung haben,4,A
+63,Spintronik: Wenn Elektronen eine Drehrichtung haben,5,D
+63,Spintronik: Wenn Elektronen eine Drehrichtung haben,6,B
+63,Spintronik: Wenn Elektronen eine Drehrichtung haben,7,B
+63,Spintronik: Wenn Elektronen eine Drehrichtung haben,8,D
+63,Spintronik: Wenn Elektronen eine Drehrichtung haben,9,D
+63,Spintronik: Wenn Elektronen eine Drehrichtung haben,10,C
+64,Die Kartographin der Zeit,1,B
+64,Die Kartographin der Zeit,2,C
+64,Die Kartographin der Zeit,3,A
+64,Die Kartographin der Zeit,4,C
+64,Die Kartographin der Zeit,5,A
+64,Die Kartographin der Zeit,6,C
+64,Die Kartographin der Zeit,7,D
+64,Die Kartographin der Zeit,8,D
+64,Die Kartographin der Zeit,9,B
+64,Die Kartographin der Zeit,10,B
+65,Antimaterie: Spiegelbild der Materie,1,C
+65,Antimaterie: Spiegelbild der Materie,2,B
+65,Antimaterie: Spiegelbild der Materie,3,A
+65,Antimaterie: Spiegelbild der Materie,4,D
+65,Antimaterie: Spiegelbild der Materie,5,A
+65,Antimaterie: Spiegelbild der Materie,6,B
+65,Antimaterie: Spiegelbild der Materie,7,B
+65,Antimaterie: Spiegelbild der Materie,8,A
+65,Antimaterie: Spiegelbild der Materie,9,D
+65,Antimaterie: Spiegelbild der Materie,10,C
+66,Das letzte Hotel,1,A
+66,Das letzte Hotel,2,C
+66,Das letzte Hotel,3,C
+66,Das letzte Hotel,4,B
+66,Das letzte Hotel,5,B
+66,Das letzte Hotel,6,D
+66,Das letzte Hotel,7,A
+66,Das letzte Hotel,8,D
+66,Das letzte Hotel,9,A
+66,Das letzte Hotel,10,D
+67,Das biologische Alter: Epigenetische Uhren und das Altern,1,C
+67,Das biologische Alter: Epigenetische Uhren und das Altern,2,D
+67,Das biologische Alter: Epigenetische Uhren und das Altern,3,A
+67,Das biologische Alter: Epigenetische Uhren und das Altern,4,B
+67,Das biologische Alter: Epigenetische Uhren und das Altern,5,B
+67,Das biologische Alter: Epigenetische Uhren und das Altern,6,A
+67,Das biologische Alter: Epigenetische Uhren und das Altern,7,C
+67,Das biologische Alter: Epigenetische Uhren und das Altern,8,C
+67,Das biologische Alter: Epigenetische Uhren und das Altern,9,A
+67,Das biologische Alter: Epigenetische Uhren und das Altern,10,D
+68,Die Schreiberin der Toten,1,C
+68,Die Schreiberin der Toten,2,A
+68,Die Schreiberin der Toten,3,A
+68,Die Schreiberin der Toten,4,D
+68,Die Schreiberin der Toten,5,D
+68,Die Schreiberin der Toten,6,A
+68,Die Schreiberin der Toten,7,C
+68,Die Schreiberin der Toten,8,B
+68,Die Schreiberin der Toten,9,B
+68,Die Schreiberin der Toten,10,A
+69,Ozeanversauerung: Das unsichtbare Problem der Meere,1,C
+69,Ozeanversauerung: Das unsichtbare Problem der Meere,2,A
+69,Ozeanversauerung: Das unsichtbare Problem der Meere,3,C
+69,Ozeanversauerung: Das unsichtbare Problem der Meere,4,D
+69,Ozeanversauerung: Das unsichtbare Problem der Meere,5,C
+69,Ozeanversauerung: Das unsichtbare Problem der Meere,6,A
+69,Ozeanversauerung: Das unsichtbare Problem der Meere,7,C
+69,Ozeanversauerung: Das unsichtbare Problem der Meere,8,B
+69,Ozeanversauerung: Das unsichtbare Problem der Meere,9,B
+69,Ozeanversauerung: Das unsichtbare Problem der Meere,10,D
+70,Das Ende der Wörterbücher,1,B
+70,Das Ende der Wörterbücher,2,A
+70,Das Ende der Wörterbücher,3,D
+70,Das Ende der Wörterbücher,4,C
+70,Das Ende der Wörterbücher,5,D
+70,Das Ende der Wörterbücher,6,B
+70,Das Ende der Wörterbücher,7,C
+70,Das Ende der Wörterbücher,8,A
+70,Das Ende der Wörterbücher,9,C
+70,Das Ende der Wörterbücher,10,B
+71,Kognitive Verzerrungen: Wenn das Gehirn systematisch irrt,1,D
+71,Kognitive Verzerrungen: Wenn das Gehirn systematisch irrt,2,D
+71,Kognitive Verzerrungen: Wenn das Gehirn systematisch irrt,3,B
+71,Kognitive Verzerrungen: Wenn das Gehirn systematisch irrt,4,C
+71,Kognitive Verzerrungen: Wenn das Gehirn systematisch irrt,5,B
+71,Kognitive Verzerrungen: Wenn das Gehirn systematisch irrt,6,A
+71,Kognitive Verzerrungen: Wenn das Gehirn systematisch irrt,7,A
+71,Kognitive Verzerrungen: Wenn das Gehirn systematisch irrt,8,D
+71,Kognitive Verzerrungen: Wenn das Gehirn systematisch irrt,9,C
+71,Kognitive Verzerrungen: Wenn das Gehirn systematisch irrt,10,D
+72,Die Nachtwächterin,1,C
+72,Die Nachtwächterin,2,A
+72,Die Nachtwächterin,3,C
+72,Die Nachtwächterin,4,B
+72,Die Nachtwächterin,5,B
+72,Die Nachtwächterin,6,D
+72,Die Nachtwächterin,7,C
+72,Die Nachtwächterin,8,D
+72,Die Nachtwächterin,9,A
+72,Die Nachtwächterin,10,D
+73,Synthetische Biologie: Leben neu entwerfen,1,A
+73,Synthetische Biologie: Leben neu entwerfen,2,B
+73,Synthetische Biologie: Leben neu entwerfen,3,B
+73,Synthetische Biologie: Leben neu entwerfen,4,A
+73,Synthetische Biologie: Leben neu entwerfen,5,D
+73,Synthetische Biologie: Leben neu entwerfen,6,C
+73,Synthetische Biologie: Leben neu entwerfen,7,B
+73,Synthetische Biologie: Leben neu entwerfen,8,D
+73,Synthetische Biologie: Leben neu entwerfen,9,A
+73,Synthetische Biologie: Leben neu entwerfen,10,C
+74,Der Kartograph der Stimmen,1,A
+74,Der Kartograph der Stimmen,2,C
+74,Der Kartograph der Stimmen,3,D
+74,Der Kartograph der Stimmen,4,B
+74,Der Kartograph der Stimmen,5,A
+74,Der Kartograph der Stimmen,6,C
+74,Der Kartograph der Stimmen,7,D
+74,Der Kartograph der Stimmen,8,B
+74,Der Kartograph der Stimmen,9,C
+74,Der Kartograph der Stimmen,10,B
+75,Schwarmintelligenz: Kollektive Weisheit ohne zentrale Kontrolle,1,B
+75,Schwarmintelligenz: Kollektive Weisheit ohne zentrale Kontrolle,2,C
+75,Schwarmintelligenz: Kollektive Weisheit ohne zentrale Kontrolle,3,B
+75,Schwarmintelligenz: Kollektive Weisheit ohne zentrale Kontrolle,4,D
+75,Schwarmintelligenz: Kollektive Weisheit ohne zentrale Kontrolle,5,D
+75,Schwarmintelligenz: Kollektive Weisheit ohne zentrale Kontrolle,6,A
+75,Schwarmintelligenz: Kollektive Weisheit ohne zentrale Kontrolle,7,B
+75,Schwarmintelligenz: Kollektive Weisheit ohne zentrale Kontrolle,8,C
+75,Schwarmintelligenz: Kollektive Weisheit ohne zentrale Kontrolle,9,D
+75,Schwarmintelligenz: Kollektive Weisheit ohne zentrale Kontrolle,10,A
+76,Das Ferngespräch,1,B
+76,Das Ferngespräch,2,D
+76,Das Ferngespräch,3,D
+76,Das Ferngespräch,4,A
+76,Das Ferngespräch,5,A
+76,Das Ferngespräch,6,C
+76,Das Ferngespräch,7,B
+76,Das Ferngespräch,8,A
+76,Das Ferngespräch,9,C
+76,Das Ferngespräch,10,B
+77,Dunkle Materie: Das unsichtbare Gerüst des Universums,1,A
+77,Dunkle Materie: Das unsichtbare Gerüst des Universums,2,D
+77,Dunkle Materie: Das unsichtbare Gerüst des Universums,3,A
+77,Dunkle Materie: Das unsichtbare Gerüst des Universums,4,D
+77,Dunkle Materie: Das unsichtbare Gerüst des Universums,5,C
+77,Dunkle Materie: Das unsichtbare Gerüst des Universums,6,B
+77,Dunkle Materie: Das unsichtbare Gerüst des Universums,7,C
+77,Dunkle Materie: Das unsichtbare Gerüst des Universums,8,D
+77,Dunkle Materie: Das unsichtbare Gerüst des Universums,9,A
+77,Dunkle Materie: Das unsichtbare Gerüst des Universums,10,B
+78,Der Museumswächter,1,D
+78,Der Museumswächter,2,A
+78,Der Museumswächter,3,C
+78,Der Museumswächter,4,B
+78,Der Museumswächter,5,C
+78,Der Museumswächter,6,D
+78,Der Museumswächter,7,A
+78,Der Museumswächter,8,D
+78,Der Museumswächter,9,B
+78,Der Museumswächter,10,B
+79,Quantencomputing: Rechnen mit Überlagerung,1,C
+79,Quantencomputing: Rechnen mit Überlagerung,2,D
+79,Quantencomputing: Rechnen mit Überlagerung,3,A
+79,Quantencomputing: Rechnen mit Überlagerung,4,A
+79,Quantencomputing: Rechnen mit Überlagerung,5,B
+79,Quantencomputing: Rechnen mit Überlagerung,6,D
+79,Quantencomputing: Rechnen mit Überlagerung,7,D
+79,Quantencomputing: Rechnen mit Überlagerung,8,C
+79,Quantencomputing: Rechnen mit Überlagerung,9,B
+79,Quantencomputing: Rechnen mit Überlagerung,10,D
+80,Das letzte Kapitel,1,A
+80,Das letzte Kapitel,2,D
+80,Das letzte Kapitel,3,C
+80,Das letzte Kapitel,4,B
+80,Das letzte Kapitel,5,D
+80,Das letzte Kapitel,6,D
+80,Das letzte Kapitel,7,B
+80,Das letzte Kapitel,8,C
+80,Das letzte Kapitel,9,A
+80,Das letzte Kapitel,10,A
