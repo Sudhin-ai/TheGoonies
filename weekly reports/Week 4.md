@@ -1,60 +1,60 @@
 # Week 04 Report — Machine Learning for Smart and Connected Systems (ML4SCS)
 
 ## Weekly Goal
--Weitere Recherche und bestellen vom Tobii Eyetracker 5. Erste Version unser Texte erstellen, mit welcher Konzentration getestet werden soll.
-
-**Examples**
-- Define the project question
-- Explore the dataset
-- Build a baseline pipeline
+Weitere Recherche betreiben und den Tobii Eye Tracker 5 bestellen. Eine erste Version
+der Texte erstellen, mit denen die Konzentration getestet werden soll.
 
 ## Work Done This Week
 
-### 0. Project setup
-- Project Question: 
-   -Inwiefern lassen sich Blickbewegungsdaten (Tobii ET5) und Kopf-Kinematik (AirPods Motion Data) kombinieren, um die kognitive Konzentration während einer Leseaufgabe vorherzusagen?
-- Test SetUp: 
-    -Probant liest 5 Texte von jeweils 3-5 Minuten und muss zu jedem Text ca 10. fragen beantworten. Texte müsse bei hohre Konzentration gerade so in dem Zeitintervall lesbar sein.
-- Data Used: 
-    -Eyetracking Data: 
-      -Gaze Points ($x, y$): Die normierten Koordinaten (meist von 0 bis 1) auf dem Bildschirm, an denen sich der Blick des Nutzers gerade befindet.
-      -Fixationen und Sakkaden: Die Dauer, wie lange ein Bereich fixiert wird, sowie die Geschwindigkeit der schnellen Augenbewegungen zwischen zwei Punkten
-    -Airpods:
-      -Beschleunigung (Linear Acceleration): Die Bewegung des Kopfes entlang der drei Raumachsen ($x, y, z$)
-      -Winkelgeschwindigkeit (Gyroscope / Angular Velocity): Die Rotationsgeschwindigkeit, mit der der Kopf gedreht, geneigt oder geschüttelt wird.
-      -Head Tracking-Daten: Die von den AirPods erzeugten Positionsdaten, die erkennen, ob der Kopf ruhig gehalten oder unruhig hin und her bewegt wird.
-- What tools or libraries are used?
-      -Um die Sensordaten aufzuzeichnen, benötigen wir die offizielle Tobii Stream Engine API für den Eye-Tracker sowie eine Schnittstelle wie das Apple CoreMotion Framework für die AirPods. Zum anschließenden Speichern und Loggen der asynchronen Datenströme in eine CSV-Datei reichen warscheinlich die Standard-Bibliotheken von Python aus.
+### 0. Project Setup
 
+**Projektfrage:**
+Inwiefern lassen sich Blickbewegungsdaten (Tobii ET5) und Kopf-Kinematik (AirPods
+Motion Data) kombinieren, um die kognitive Konzentration während einer Leseaufgabe
+vorherzusagen?
 
-### 1. Data Work
--
+**Test-Setup:**
+Der Proband liest 5 Texte von jeweils 3–5 Minuten Länge und beantwortet zu jedem Text
+ca. 10 Fragen. Die Texte sollen bei hoher Konzentration gerade so im Zeitintervall
+lesbar sein.
 
-### 2. Analysis / Modeling Work
--
+**Geplante Daten:**
 
-### 3. Repository / Documentation Work
--
+*Eye-Tracking-Daten:*
+- **Gaze Points (x, y):** normierte Bildschirmkoordinaten (0 bis 1), an denen sich der
+  Blick des Nutzers gerade befindet
+- **Fixationen und Sakkaden:** Dauer, wie lange ein Bereich fixiert wird, sowie die
+  Geschwindigkeit der schnellen Augenbewegungen zwischen zwei Punkten
 
-## Experiments Conducted
--
+*AirPods (IMU):*
+- **Lineare Beschleunigung:** Bewegung des Kopfes entlang der drei Raumachsen (x, y, z)
+- **Winkelgeschwindigkeit (Gyroskop):** Rotationsgeschwindigkeit, mit der der Kopf
+  gedreht, geneigt oder geschüttelt wird
+- **Head-Tracking-Daten:** Positionsdaten der AirPods, die erkennen, ob der Kopf ruhig
+  gehalten oder unruhig bewegt wird
 
-## Results
--
+**Werkzeuge und Bibliotheken:**
+Zur Aufzeichnung der Sensordaten benötigen wir die offizielle Tobii Stream Engine API
+für den Eye-Tracker sowie eine Schnittstelle wie das Apple-CoreMotion-Framework für die
+AirPods. Zum Speichern und Loggen der asynchronen Datenströme in CSV-Dateien reichen
+voraussichtlich die Standard-Bibliotheken von Python aus.
 
 ## Challenges
-- Kein automatischer Datenexport (API-Stream): Der Tobii speichert oder loggt von sich aus keine Daten. Ihr müsst die asynchronen Datenströme (60–90 Hz) aktiv abfangen und in Echtzeit in eine Datei (CSV/Text) schreiben.
-- Fehlende Feature-Berechnung: Der Tracker liefert nur rohe Gaze-Koordinaten. Metriken wie Fixationsdauer oder Sakkaden müssen von euch über Algorithmen (z.B. I-VT Filter) selbst berechnet werden.
-- Datensynchronisation: Da die AirPods über Bluetooth und der Tobii über USB/Stream Engine laufen, müssen die asynchronen Datenströme zeitlich auf eine gemeinsame Zeitachse abgeglichen werden.
-
-## Key Insights
-- What did you learn this week?
+- **Kein automatischer Datenexport (API-Stream):** Der Tobii speichert oder loggt von
+  sich aus keine Daten. Die asynchronen Datenströme (60–90 Hz) müssen aktiv abgefangen
+  und in Echtzeit in eine Datei (CSV/Text) geschrieben werden.
+- **Fehlende Feature-Berechnung:** Der Tracker liefert nur rohe Gaze-Koordinaten.
+  Metriken wie Fixationsdauer oder Sakkaden müssen über eigene Algorithmen
+  (z. B. I-VT-Filter) berechnet werden.
+- **Datensynchronisation:** Da die AirPods über Bluetooth und der Tobii über
+  USB/Stream Engine laufen, müssen die asynchronen Datenströme zeitlich auf eine
+  gemeinsame Zeitachse abgeglichen werden.
 
 ## Plan for Next Week
-- Den Tobii EyeTracker 5 ausprobieren und mit Datenextrahierung auseinandersetzen
-- Daten aus AIrpods extrahieren und überlegen wie wir diese einsetzen
-- Texte und Fragen für Experiment ausarbeiten
+- Den Tobii Eye Tracker 5 ausprobieren und sich mit der Datenextraktion auseinandersetzen
+- Daten aus den AirPods extrahieren und überlegen, wie diese eingesetzt werden können
+- Texte und Fragen für das Experiment ausarbeiten
 
 ## Contributions
-- Jonah: Recherche zur Datenextraktion des Tobii Eye-Tracker 5
-- Sudhin: erste version der Tex
+- Jonah: Recherche zur Datenextraktion des Tobii Eye Tracker 5
+- Sudhin: erste Version der Texte

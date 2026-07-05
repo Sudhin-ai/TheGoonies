@@ -1,14 +1,17 @@
 # Week 07 Report — Machine Learning for Smart and Connected Systems (ML4SCS)
 
 ## Weekly Goal
-Zwischenpräsentation vorbereiten
+Die Zwischenpräsentation vorbereiten.
+
+## Work Done This Week
 
 ### 3. Repository / Documentation Work
-Weekly reports
+- Weekly Reports gepflegt
+- Zwischenpräsentation erstellt und gehalten
 
 ## Plan for Next Week
-Feedback der Präsi besprechen und Projekt damit etwas umplanen.
-Mit Web-Gaze arbeiten da der Eyetracker nicht da ist.
+- Feedback aus der Präsentation besprechen und das Projekt entsprechend anpassen
+- Mit Web-Gaze arbeiten, solange der Eye-Tracker noch nicht eingetroffen ist
 
 ## Contributions
-Gemeinsam an Präsentation gearbeitet.
+- Alle: gemeinsam an der Präsentation gearbeitet

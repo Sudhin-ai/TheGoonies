@@ -1,28 +1,34 @@
 # Week 11 Report — Machine Learning for Smart and Connected Systems (ML4SCS)
 
 ## Weekly Goal
-Skripte finalisieren, weitere Daten sammeln und Automation erstellen um unseren Testablauf zu verbessern und zu beschleunigen.
+Die Skripte finalisieren, weitere Daten sammeln und eine Automation erstellen, um den
+Testablauf zu verbessern und zu beschleunigen.
 
 ## Work Done This Week
 
-### Repository / Documentation Work
-screen_gaze_tracker.py --> finaler Skript
-train_model.py --> Modell trainieren
-predict.py 
-experiment.py --> Automation
-server.py --> Automation
-send_markers.py --> Sendet nach Beantworten der MC-Fragen die Ergebnisse, welche mit dem Antwort-Schlüssel abgeglichen werden um zu gucken, wie viele richtig beantweortet wurden
+### 3. Repository / Documentation Work
+- `screen_gaze_tracker.py` — finales Tracking-Skript
+- `train_model.py` — Training des Random-Forest-Modells
+- `predict.py` — Score-Vorhersage aus Gaze-Daten
+- `experiment.py` — Automation des Testablaufs (Textanzeige, Marker)
+- `server.py` — Automation der MC-Fragen über einen lokalen Webserver
+- `send_markers.py` — sendet nach dem Beantworten der MC-Fragen die Ergebnisse, die mit
+  dem Antwortschlüssel abgeglichen werden, um die Anzahl richtiger Antworten zu ermitteln
 
 ## Results
-antworten Ordner zeigt die Antworten der jeweiligen Probanden
-scores.csv --> zeigt das Ergebnis der MC-Fragen der Probanden x/10 
+- Der Ordner `antworten/` enthält die Antworten der jeweiligen Probanden
+- `scores.csv` zeigt das Ergebnis der MC-Fragen pro Proband (x/10)
 
 ## Challenges
-Nicht zufrieden mit der Vielfältigkeit der Texte, wollen die vielfältiger aufbauen da man sehr viele Texte lesen muss.
+- Wir sind mit der Vielfältigkeit der Texte nicht zufrieden — da sehr viele Texte
+  gelesen werden müssen, sollen sie abwechslungsreicher aufgebaut werden
 
 ## Key Insights
-Automation war sehr hilfreich um Zeit zu sparen und den Ablauf zu vereinfachen.
+- Die Automation war sehr hilfreich, um Zeit zu sparen und den Ablauf zu vereinfachen
 
 ## Plan for Next Week
-Mehr Daten erheben und Texte vielfältiger aufbauen und finalsieren.
+- Mehr Daten erheben
+- Texte vielfältiger aufbauen und finalisieren
 
+## Contributions
+- Alle: gemeinsame Arbeit an Automation und Datenerhebung

@@ -1,26 +1,35 @@
 # Week 10 Report — Machine Learning for Smart and Connected Systems (ML4SCS)
 
 ## Weekly Goal
-Eyetracking-Skript finalisieren, Skripte um Daten zu extrahieren erstellen und Daten erfassen
+Das Eye-Tracking-Skript finalisieren, Skripte zur Datenextraktion erstellen und
+erste Daten erfassen.
 
 ## Work Done This Week
 
-### Repository / Documentation Work
-screen_gaze_tracker(3) & (4) --> um den Eyetracker zu tracken um gazedaten zu generieren
-extract_features.py & features.py --> Um Gazedaten zu extrahieren
+### 3. Repository / Documentation Work
+- `screen_gaze_tracker (3)` und `(4)` — Weiterentwicklung des Tracking-Skripts, um den
+  Eye-Tracker zu verfolgen und Gaze-Daten zu generieren
+- `extract_features.py` und `features.py` — Extraktion der Features aus den Gaze-Daten
 
 ## Results
-IMU-Daten_1 bis 10
+- **IMU-Daten_1 bis IMU-Daten_10** (siehe `docs/images/`): gesammelte AirPods-IMU-Daten
+  während der Lesetests
 
-Das sind gesammlte Airpods IMU Daten während dem lesentest.
-
-Airpodsdaten zeigen dass sie wenig schwanken beim lesen und bei verschiedenen Scores trotzdem ähnlich bleiben und somit keine Aussagekraft über Aufmerksamkeit beim Lesen eines Textes haben.
+Die AirPods-Daten schwanken beim Lesen kaum und bleiben auch bei unterschiedlichen
+Scores sehr ähnlich — sie besitzen damit keine Aussagekraft über die Aufmerksamkeit
+beim Lesen eines Textes.
 
 ## Challenges
-Wir müssen Skripte anpassen, dass sie keine Airpoddaten einbeziehen
+- Die Skripte müssen so angepasst werden, dass sie keine AirPods-Daten mehr einbeziehen
 
 ## Key Insights
-Airpodsdaten zeigen wenig Aussagekraft und werden deshalb iin diesem Projekt nicht mehr einbezogen
+- Die AirPods-Daten zeigen zu wenig Aussagekraft und werden in diesem Projekt nicht
+  mehr einbezogen
 
 ## Plan for Next Week
-Skripte anpassen, zusätliche Codes zum trainieren des Modells und zum auswerten der Daten erstellen und weitere Texte für Testdurchläufe.
+- Skripte anpassen (AirPods-Daten entfernen)
+- Zusätzliche Skripte zum Trainieren des Modells und zur Auswertung der Daten erstellen
+- Weitere Texte für Testdurchläufe schreiben
+
+## Contributions
+- Alle: gemeinsame Datenerfassung und Skript-Entwicklung
