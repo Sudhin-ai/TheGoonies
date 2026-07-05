@@ -4,7 +4,6 @@ predict.py
 Sagt einen Score für eine Person aus einer Gaze-CSV vorher.
 
 Nutzung:
-    python predict.py <participant> <gaze.csv> [<markers.csv>] [<head.csv>]
     python predict.py sudhin demo   (Demo-Werte)
 
 Einzelner Text (ohne Marker):
@@ -23,11 +22,8 @@ import pandas as pd
 
 from features import (
     crop_stream_to_window,
-    crop_to_overlap,
     extract_gaze,
-    extract_head,
     gaze_csv_to_stream,
-    head_csv_to_stream,
     markers_csv_to_segments,
 )
 
@@ -39,20 +35,12 @@ DEMO_SAMPLE = {
     "fixation_duration_mean": 0.25,
     "gaze_dispersion": 0.12,
     "gaze_valid_ratio": 0.95,
-    "head_motion": 1.2,
-    "head_std": 0.5,
+    "text_gaze_ratio": 0.88,
 }
 
 
-def predict_segment(model, feature_cols, gaze_stream, head_stream=None, label=""):
-    if head_stream is not None:
-        gaze_stream, head_stream = crop_to_overlap(gaze_stream, head_stream)
-
-    row = {}
-    row.update(extract_gaze(gaze_stream))
-    if head_stream is not None:
-        row.update(extract_head(head_stream))
-
+def predict_segment(model, feature_cols, gaze_stream, label=""):
+    row = extract_gaze(gaze_stream)
     sample = pd.DataFrame([row])[feature_cols]
     if sample.isna().any(axis=None):
         print(f"  Warnung {label}: mindestens ein Feature ist NaN.")
@@ -63,19 +51,24 @@ def predict_segment(model, feature_cols, gaze_stream, head_stream=None, label=""
 
 def main():
     if len(sys.argv) < 3:
-        print("Nutzung: python predict.py <participant> <gaze.csv|demo> [markers.csv] [head.csv]")
+        print("Nutzung: python predict.py <participant> <gaze.csv|demo> [markers.csv]")
         sys.exit(1)
 
     participant = sys.argv[1]
-    model_path = f"{MODELS_DIR}/{participant}.pkl"
+    model_path  = f"{MODELS_DIR}/{participant}.pkl"
 
     try:
         bundle = joblib.load(model_path)
     except FileNotFoundError:
-        print(f"Kein Modell für '{participant}' ({model_path}). Zuerst train_model.py ausführen.")
-        sys.exit(1)
+        pooled = f"{MODELS_DIR}/pooled.pkl"
+        if os.path.exists(pooled):
+            print(f"Kein within-subject Modell für '{participant}' – verwende gepooltes Modell.")
+            bundle = joblib.load(pooled)
+        else:
+            print(f"Kein Modell gefunden ({model_path}). Zuerst train_model.py ausführen.")
+            sys.exit(1)
 
-    model = bundle["model"]
+    model        = bundle["model"]
     feature_cols = bundle["feature_cols"]
 
     if sys.argv[2] == "demo":
@@ -85,19 +78,16 @@ def main():
 
     gaze_path    = sys.argv[2]
     markers_path = sys.argv[3] if len(sys.argv) > 3 else None
-    head_path    = sys.argv[4] if len(sys.argv) > 4 else None
 
     gaze_stream = gaze_csv_to_stream(gaze_path)
-    head_stream = head_csv_to_stream(head_path) if head_path else None
 
     if markers_path:
         segments = markers_csv_to_segments(markers_path)
         for text_id, t_start, t_end in segments:
-            seg_gaze = crop_stream_to_window(gaze_stream, t_start, t_end)
-            seg_head = crop_stream_to_window(head_stream, t_start, t_end) if head_stream else None
-            predict_segment(model, feature_cols, seg_gaze, seg_head, label=f"Text {text_id}: ")
+            seg = crop_stream_to_window(gaze_stream, t_start, t_end)
+            predict_segment(model, feature_cols, seg, label=f"Text {text_id}: ")
     else:
-        predict_segment(model, feature_cols, gaze_stream, head_stream)
+        predict_segment(model, feature_cols, gaze_stream)
 
 
 if __name__ == "__main__":

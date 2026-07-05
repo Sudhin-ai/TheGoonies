@@ -33,6 +33,7 @@ Echte Aufnahme (sendet LSL-Stream):
 """
 import argparse
 import math
+import os
 import time
 
 import cv2
@@ -202,10 +203,12 @@ def main():
         csv_writer = None
         if args.save and not args.calibrate:
             import csv as _csv
-            csv_file = open(args.save, "w", newline="", encoding="utf-8")
+            file_exists = os.path.exists(args.save)
+            csv_file = open(args.save, "a", newline="", encoding="utf-8")
             csv_writer = _csv.writer(csv_file)
-            csv_writer.writerow(["timestamp", "x", "y", "radius_px", "in_text_region"])
-            print(f"CSV-Aufnahme: {args.save}")
+            if not file_exists:
+                csv_writer.writerow(["timestamp", "x", "y", "radius_px", "in_text_region"])
+            print(f"CSV-Aufnahme (anhängen): {args.save}")
 
         if not args.calibrate:
             print("Druecke Strg+C zum Beenden.\n")
@@ -235,7 +238,7 @@ def main():
 
                     x_norm = x_px / width
                     y_norm = y_px / height
-                    ts = pylsl.local_clock() if outlet is not None else time.time()
+                    ts = time.time()
 
                     if outlet is not None:
                         outlet.push_sample([x_norm, y_norm], ts)

@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Projekt-spezifisch
+progress.json
+models/
+raw_data/demo_*
+antworten/*_demo_antworten.csv

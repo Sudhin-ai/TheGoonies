@@ -2,7 +2,8 @@
 train_model.py
 ===============
 Trainiert je einen RandomForestRegressor pro Versuchsperson (within-subject)
-auf dataset.csv. Verwendet Leave-One-Out-CV für die Modellbewertung.
+sowie ein gepooltes Modell über alle Teilnehmer (cross-subject).
+Verwendet Leave-One-Out-CV für die Modellbewertung.
 
 Nutzung:
     python train_model.py
@@ -10,6 +11,7 @@ Nutzung:
 """
 import argparse
 import os
+import warnings
 
 import joblib
 import numpy as np
@@ -19,6 +21,7 @@ from sklearn.model_selection import LeaveOneOut, cross_val_score
 
 RANDOM_STATE = 42
 MODELS_DIR = "models"
+MIN_SAMPLES = 3
 
 FEATURE_COLS = [
     "reading_time",
@@ -26,9 +29,7 @@ FEATURE_COLS = [
     "fixation_duration_mean",
     "gaze_dispersion",
     "gaze_valid_ratio",
-    "text_gaze_ratio",   # Anteil der Zeit mit Blick auf den Text (0-1)
-    "head_motion",
-    "head_std",
+    "text_gaze_ratio",
 ]
 
 parser = argparse.ArgumentParser()
@@ -38,44 +39,75 @@ args = parser.parse_args()
 os.makedirs(MODELS_DIR, exist_ok=True)
 df = pd.read_csv(args.dataset)
 
+
+def evaluate_and_save(name, sub, available, filename):
+    n = len(sub)
+    if n < MIN_SAMPLES:
+        print(f"  Zu wenige Samples ({n}) – übersprungen.")
+        return
+
+    # Echte Samples für Evaluation, alle für Training
+    has_aug = "augmented" in sub.columns
+    real = sub[~sub["augmented"].astype(bool)] if has_aug else sub
+    n_real = len(real)
+    n_aug  = n - n_real
+
+    if n_real < MIN_SAMPLES:
+        print(f"  Zu wenige echte Samples ({n_real}) – übersprungen.")
+        return
+
+    label = f"{n_real} echte"
+    if n_aug:
+        label += f" + {n_aug} augmentierte"
+    print(f"  Samples: {label}")
+
+    X_all, y_all   = sub[available],  sub["score"]
+    X_real, y_real = real[available], real["score"]
+
+    loo = LeaveOneOut()
+    cv_model = RandomForestRegressor(n_estimators=200, random_state=RANDOM_STATE)
+
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        mae = -cross_val_score(cv_model, X_real, y_real, cv=loo,
+                               scoring="neg_mean_absolute_error")
+        if n_real >= 5:
+            r2 = cross_val_score(cv_model, X_real, y_real, cv=loo, scoring="r2")
+            r2_val = f"{np.nanmean(r2):.3f}  (±{np.nanstd(r2):.3f})"
+        else:
+            r2_val = "n/a"
+
+    print(f"  LOO-CV MAE (echte): {mae.mean():.3f}  (±{mae.std():.3f})")
+    print(f"  LOO-CV R²  (echte): {r2_val}")
+
+    # Modell auf allen Daten trainieren (echte + augmentierte)
+    model = RandomForestRegressor(n_estimators=200, random_state=RANDOM_STATE)
+    model.fit(X_all, y_all)
+
+    out = os.path.join(MODELS_DIR, filename)
+    joblib.dump({"model": model, "feature_cols": available,
+                 "mae": float(mae.mean())}, out)
+    print(f"  Gespeichert: {out}")
+
+
+# --- Within-subject Modelle ---
 for participant, group in df.groupby("participant"):
     print(f"\n=== {participant} ===")
 
-    # Nur Features verwenden die für diesen Teilnehmer tatsächlich Daten haben.
-    # Komplett-NaN-Spalten (z.B. head_motion ohne AirPods) werden ausgeschlossen.
     available = [c for c in FEATURE_COLS if c in group.columns and group[c].notna().any()]
-    missing = [c for c in FEATURE_COLS if c not in available]
-    if missing:
-        print(f"  Fehlende Features (werden ignoriert): {missing}")
-
     sub = group[available + ["score"]].dropna().reset_index(drop=True)
 
     dropped = len(group) - len(sub)
     if dropped:
-        print(f"  {dropped} Zeile(n) mit NaN entfernt.")
+        print(f"  {dropped} Zeile(n) ohne Gaze-Daten übersprungen.")
 
-    n = len(sub)
-    if n < 5:
-        print(f"  Zu wenige Samples ({n}) – übersprungen.")
-        continue
-    if n < 20:
-        print(f"  Warnung: nur {n} Samples – Metriken sind orientierend.")
+    evaluate_and_save(participant, sub, available, f"{participant}.pkl")
 
-    X, y = sub[available], sub["score"]
-
-    loo = LeaveOneOut()
-    cv_model = RandomForestRegressor(n_estimators=200, random_state=RANDOM_STATE)
-    r2  = cross_val_score(cv_model, X, y, cv=loo, scoring="r2")
-    mae = -cross_val_score(cv_model, X, y, cv=loo, scoring="neg_mean_absolute_error")
-
-    print(f"  LOO-CV R²:  {r2.mean():.3f}  (±{r2.std():.3f})")
-    print(f"  LOO-CV MAE: {mae.mean():.3f}  (±{mae.std():.3f})")
-
-    model = RandomForestRegressor(n_estimators=200, random_state=RANDOM_STATE)
-    model.fit(X, y)
-
-    out = os.path.join(MODELS_DIR, f"{participant}.pkl")
-    joblib.dump({"model": model, "feature_cols": available}, out)
-    print(f"  Gespeichert: {out}")
+# --- Gepooltes Cross-Subject-Modell ---
+print(f"\n=== GEPOOLTES MODELL (alle Teilnehmer) ===")
+available_all = [c for c in FEATURE_COLS if c in df.columns and df[c].notna().any()]
+pooled = df[available_all + ["score"]].dropna().reset_index(drop=True)
+print(f"  {len(pooled)} gültige Samples über alle Teilnehmer.")
+evaluate_and_save("pooled", pooled, available_all, "pooled.pkl")
 
 print("\nFertig.")

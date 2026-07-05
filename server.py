@@ -37,7 +37,14 @@ ANTWORTEN_DIR = "antworten"
 
 def load_texte(path):
     with open(path, "r", encoding="utf-8") as f:
-        raw = json.load(f)
+        content = f.read().strip()
+
+    # JSONL: ein Objekt pro Zeile
+    if content.startswith("{"):
+        raw = [json.loads(line) for line in content.splitlines() if line.strip()]
+    else:
+        raw = json.loads(content)
+
     if isinstance(raw, dict):
         for key in ("texte", "texts", "items"):
             if key in raw:

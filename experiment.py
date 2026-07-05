@@ -5,21 +5,23 @@ Steuerskript für das Eye-Tracking-Leseexperiment.
 
 Ablauf pro Text:
   1. Wartebildschirm ("Weiter mit Leertaste")
-  2. Vollbild-Textanzeige + text_start Marker
-  3. "Weiter"-Button → text_end Marker + Browser öffnet Forms-Link
-  4. Nächster Text
+  2. Rechte Bildschirmhälfte: Textanzeige + text_start Marker
+  3. "Weiter"-Button → text_end Marker + Browser öffnet localhost:5000/text/<id>
+  4. Nächster Wartebildschirm
+
+Voraussetzung: server.py muss laufen (python server.py).
 
 Nutzung:
     python experiment.py --participant sudhin
-    python experiment.py --participant kushal --texte meine_texte.json
-    python experiment.py --participant dario --start 5   # ab Text-Index 5
+    python experiment.py --participant kushal
+    python experiment.py --participant dario --start 5   # ab text_id 5 weitermachen
 
 Erzeugt:
     raw_data/sudhin_markers.csv
     raw_data/sudhin_sync.json
 
 Installation:
-    pip install pylsl
+    pip install pylsl flask
 """
 import argparse
 import csv
@@ -37,8 +39,9 @@ from tkinter import messagebox
 # ---------------------------------------------------------------------------
 
 TEXTE_JSON     = "texte.json"
-FORMS_CSV      = "forms_links.csv"
 RAW_DATA       = "raw_data"
+SERVER_URL     = "http://localhost:5000"   # server.py muss laufen
+PROGRESS_FILE  = "progress.json"           # speichert Fortschritt pro Teilnehmer
 
 # Schrift
 FONT_FAMILY    = "Segoe UI"   # Windows-Standard, lesbar
@@ -103,9 +106,12 @@ class MarkerLogger:
             self.outlet.push_sample([label], self._pylsl.local_clock())
 
     def save(self):
-        with open(self.markers_path, "w", newline="", encoding="utf-8") as f:
+        # Anhängen falls Datei schon existiert, sonst neu anlegen mit Header
+        file_exists = os.path.exists(self.markers_path)
+        with open(self.markers_path, "a", newline="", encoding="utf-8") as f:
             w = csv.writer(f)
-            w.writerow(["timestamp", "label", "text_id"])
+            if not file_exists:
+                w.writerow(["timestamp", "label", "text_id"])
             w.writerows(self._rows)
         print(f"Gespeichert: {self.markers_path} ({len(self._rows)} Marker)")
 
@@ -116,8 +122,14 @@ class MarkerLogger:
 
 def load_texte(path):
     with open(path, "r", encoding="utf-8") as f:
-        raw = json.load(f)
-    # Unterstützt sowohl {"texte": [...]} als auch direkt [...]
+        content = f.read().strip()
+
+    # JSONL: ein Objekt pro Zeile
+    if content.startswith("{"):
+        raw = [json.loads(line) for line in content.splitlines() if line.strip()]
+    else:
+        raw = json.loads(content)
+
     if isinstance(raw, dict):
         for key in ("texte", "texts", "items"):
             if key in raw:
@@ -128,21 +140,29 @@ def load_texte(path):
     return raw
 
 
-def load_forms_links(path):
-    """Gibt dict text_id(int) → url zurück. Leere URL wenn kein Eintrag."""
-    if not os.path.exists(path):
-        print(f"Warnung: {path} nicht gefunden – keine Browser-Links.")
-        return {}
-    links = {}
-    with open(path, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            try:
-                tid = int(str(row["text_id"]).strip())
-                links[tid] = str(row["url"]).strip()
-            except (KeyError, ValueError):
-                pass
-    return links
+
+# ---------------------------------------------------------------------------
+# Fortschritt speichern / laden
+# ---------------------------------------------------------------------------
+
+def load_progress(participant):
+    """Gibt den gespeicherten Listen-Index für diesen Teilnehmer zurück (0 wenn neu)."""
+    if not os.path.exists(PROGRESS_FILE):
+        return 0
+    with open(PROGRESS_FILE, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return data.get(participant, 0)
+
+
+def save_progress(participant, next_index):
+    """Speichert den nächsten Listen-Index für diesen Teilnehmer."""
+    data = {}
+    if os.path.exists(PROGRESS_FILE):
+        with open(PROGRESS_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    data[participant] = next_index
+    with open(PROGRESS_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
 
 
 # ---------------------------------------------------------------------------
@@ -150,10 +170,10 @@ def load_forms_links(path):
 # ---------------------------------------------------------------------------
 
 class ExperimentApp:
-    def __init__(self, root, texte, forms_links, marker_logger, start_index=0):
+    def __init__(self, root, texte, participant, marker_logger, start_index=0):
         self.root          = root
         self.texte         = texte
-        self.forms_links   = forms_links
+        self.participant   = participant
         self.logger        = marker_logger
         self.current_index = start_index
         self.state         = "waiting"   # "waiting" | "reading"
@@ -300,6 +320,9 @@ class ExperimentApp:
 
         self.frame_read.lower()
         self.frame_wait.lift()
+        # Fenster wieder in den Vordergrund holen damit Leertaste ankommt
+        self.root.lift()
+        self.root.focus_force()
 
     def _show_text(self, text_entry):
         self.state = "reading"
@@ -316,7 +339,9 @@ class ExperimentApp:
 
         self.frame_wait.lower()
         self.frame_read.lift()
-        self.btn_weiter.focus_set()
+        # Fokus auf Root (nicht auf Button) – sonst löst die Leertaste
+        # sofort den Weiter-Button aus, weil Tkinter Space = Button-Klick
+        self.root.focus_set()
 
         # Marker senden
         text_id = text_entry.get("text_id", self.current_index + 1)
@@ -344,15 +369,13 @@ class ExperimentApp:
         self.logger.send("text_end", text_id)
         print(f"  → text_end   (Text {text_id})")
 
-        # Browser öffnen
-        url = self.forms_links.get(int(text_id), "")
-        if url and url.lower() not in ("", "nan", "none"):
-            webbrowser.open(url)
-            print(f"  Browser: {url}")
-        else:
-            print(f"  Kein Forms-Link für Text {text_id} – übersprungen.")
+        # Fragebogen im Browser öffnen
+        url = f"{SERVER_URL}/text/{text_id}?participant={self.participant}"
+        webbrowser.open(url)
+        print(f"  Browser: {url}")
 
         self.current_index += 1
+        save_progress(self.participant, self.current_index)
 
         # Kurz warten damit Browser Zeit hat sich zu öffnen
         self.root.after(int(BROWSER_WAIT * 1000), self._show_waiting)
@@ -374,19 +397,28 @@ class ExperimentApp:
 # Hauptprogramm
 # ---------------------------------------------------------------------------
 
+def find_start_index(texte, start_text_id):
+    """Gibt den Listen-Index zurück, bei dem text_id == start_text_id.
+    Falls nicht gefunden, wird 0 zurückgegeben und eine Warnung ausgegeben."""
+    for i, entry in enumerate(texte):
+        if int(entry.get("text_id", i + 1)) == start_text_id:
+            return i
+    print(f"  Warnung: text_id {start_text_id} nicht gefunden – starte von vorne.")
+    return 0
+
+
 def main():
     parser = argparse.ArgumentParser(description="Eye-Tracking Leseexperiment")
     parser.add_argument("--participant", required=True,
                         help="Teilnehmer-ID: sudhin, kushal oder dario")
     parser.add_argument("--texte", default=TEXTE_JSON,
                         help=f"Pfad zur texte.json (Standard: {TEXTE_JSON})")
-    parser.add_argument("--links", default=FORMS_CSV,
-                        help=f"Pfad zur forms_links.csv (Standard: {FORMS_CSV})")
-    parser.add_argument("--start", type=int, default=0,
-                        help="Startindex (0-basiert), um bei einem Text fortzusetzen")
+    parser.add_argument("--start", type=int, default=None,
+                        help="text_id ab der fortgesetzt wird, z.B. --start 12 "
+                             "(nützlich beim Probandenwechsel oder nach Unterbrechung)")
     args = parser.parse_args()
 
-    # Dateien laden
+    # Texte laden
     if not os.path.exists(args.texte):
         print(f"Fehler: {args.texte} nicht gefunden.")
         sys.exit(1)
@@ -395,11 +427,21 @@ def main():
     texte = load_texte(args.texte)
     print(f"  {len(texte)} Texte geladen.")
 
-    forms_links = load_forms_links(args.links)
-    print(f"  {len(forms_links)} Forms-Links geladen.")
-
-    if args.start > 0:
-        print(f"  Starte ab Index {args.start} (Text {args.start + 1}).")
+    # Startposition bestimmen
+    if args.start is not None:
+        # Manuelle Angabe überschreibt gespeicherten Fortschritt
+        start_index = find_start_index(texte, args.start)
+        save_progress(args.participant, start_index)
+        print(f"  Starte ab text_id {args.start} (Listen-Index {start_index}).")
+    else:
+        start_index = load_progress(args.participant)
+        if start_index > 0:
+            done_text_id = texte[start_index - 1].get("text_id", start_index) if start_index <= len(texte) else "?"
+            next_text_id = texte[start_index].get("text_id", start_index + 1) if start_index < len(texte) else "–"
+            print(f"  Fortschritt geladen: {args.participant} hat bereits {start_index} Text(e) absolviert.")
+            print(f"  Weiter ab text_id {next_text_id} (Listen-Index {start_index}).")
+        else:
+            print(f"  Kein gespeicherter Fortschritt für {args.participant} – starte von vorne.")
 
     # Marker-Logger
     logger = MarkerLogger(args.participant)
@@ -411,9 +453,9 @@ def main():
     app = ExperimentApp(
         root,
         texte=texte,
-        forms_links=forms_links,
+        participant=args.participant,
         marker_logger=logger,
-        start_index=args.start,
+        start_index=start_index,
     )
 
     try:
