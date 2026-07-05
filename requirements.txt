@@ -1,0 +1,8 @@
+flask
+joblib
+numpy
+opencv-python
+pandas
+pylsl
+mss
+scikit-learn
