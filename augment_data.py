@@ -10,7 +10,7 @@ In der Präsentation transparent als "data augmentation" kennzeichnen.
 
 Nutzung:
     python augment_data.py
-    python augment_data.py --factor 10   # 10x so viele Samples (Standard: 8)
+    python augment_data.py --factor 2   # 2x so viele Samples 
 """
 
 import argparse
@@ -32,7 +32,7 @@ NOISE_SCALE = 0.08
 parser = argparse.ArgumentParser()
 parser.add_argument("--input",  default="dataset.csv")
 parser.add_argument("--output", default="dataset_augmented.csv")
-parser.add_argument("--factor", type=int, default=8,
+parser.add_argument("--factor", type=int, default=2,
                     help="Wie viele synthetische Kopien pro echtem Sample")
 parser.add_argument("--target", type=int, default=None,
                     help="Ziel-Gesamtanzahl pro Teilnehmer (überschreibt --factor)")
