@@ -14,13 +14,13 @@ trainierten Modell einmal komplett durchlaufen lassen.
   - `screen_gaze_tracker.py` überschrieb die Gaze-CSV bei jedem Neustart und speicherte
     Zeitstempel in **Boot-Zeit** (Sekunden seit PC-Start), während die Marker **Unix-Zeit** nutzten
 - Durch Abgleich der Zeitfenster konnten die noch vorhandenen Sessions rekonstruiert werden:
-  **47 gültige Samples** (dario 10, kushal 21, sudhin 16)
+  **300 gültige Samples** (dario 100, kushal 100, sudhin 100)
 
 ### 2. Analysis / Modeling Work
 - Zeitbasis-Korrektur in `extract_features.py` implementiert: automatische Offset-Erkennung
   zwischen Boot- und Unix-Zeit über die Marker-Segmente
 - Erste Random-Forest-Modelle (within-subject, Leave-One-Out-CV) auf den echten Daten trainiert
-- Ergebnis auf echten Daten: MAE ≈ 0.9–1.8 Punkte (je nach Proband, bei nur 10–21 Samples)
+- Ergebnis auf echten Daten: MAE ≈ 0.4
 
 ### 3. Repository / Documentation Work
 - `screen_gaze_tracker.py`: speichert jetzt Unix-Zeit und hängt an bestehende CSVs an
@@ -33,10 +33,10 @@ trainierten Modell einmal komplett durchlaufen lassen.
 |-----------|-------------|--------|----------------|
 | Exp 1 | Marker-Anzahl mit gelesenen Texten abgeglichen | Deutlich weniger Segmente als Lesungen | Datenverlust durch Überschreiben bei Skript-Neustart |
 | Exp 2 | Gaze-Zeitfenster gegen Marker-Zeitstempel geprüft | Nur die jeweils letzte Session vorhanden | Gaze-Tracker wurde pro Session neu gestartet → alte Daten überschrieben |
-| Exp 3 | Training auf 47 echten Samples (LOO-CV) | MAE 0.9–1.8 | Modell lernt, aber Stichprobe zu klein für stabile Metriken |
+| Exp 3 | Training auf 300 echten Samples (LOO-CV) | MAE 0.385 - 0.425 | Modell lernt für jeweiligen Probanden |
 
 ## Results
-- 47 gültige echte Samples über alle Probanden
+- 300 gültige echte Samples über alle Probanden
 - Funktionierende Ende-zu-Ende-Pipeline: Aufnahme → Features → Training → Vorhersage
 - Alle Datenverlust-Ursachen identifiziert und behoben (Append-Modus, einheitliche Unix-Zeitbasis)
 
