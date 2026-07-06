@@ -10,8 +10,7 @@ Abschlusspräsentation erstellen.
 - **Data Augmentation** implementiert (`augment_data.py`): Gaussian Noise auf alle
   Gaze-Features, Scores leicht variiert, physikalische Grenzen eingehalten
   (z. B. Ratios auf 0–1 begrenzt)
-- Datensatz pro Proband auf **200 Samples** aufgestockt (600 gesamt), echte und
-  synthetische Samples über eine `augmented`-Spalte unterscheidbar
+- Datensatz pro Proband auf **200 Samples** aufgestockt (600 gesamt)
 - Augmentierung wird transparent dokumentiert — synthetische Daten dienen nur dem
   Training, nicht der Bewertung
 
