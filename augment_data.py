@@ -10,7 +10,7 @@ In der Präsentation transparent als "data augmentation" kennzeichnen.
 
 Nutzung:
     python augment_data.py
-    python augment_data.py --factor 2   # 2x so viele Samples 
+    python augment_data.py --factor 2   # 1x so viele Samples 
 """
 
 import argparse
