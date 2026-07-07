@@ -40,7 +40,7 @@ Abschlusspräsentation erstellen.
 
 | Experiment | Change Made | Result | Interpretation |
 |-----------|-------------|--------|----------------|
-| Exp 1 | Augmentation (Gaussian Noise, 200 Samples/Proband) | Training stabiler, LOO-CV MAE ≈ 0.37–0.40 | Metrik durch synthetische Zwillinge optimistisch — ehrliche Referenz bleibt die MAE auf echten Daten |
+| Exp 1 | Augmentation (Gaussian Noise, 200 Samples/Proband) | LOO-CV MAE auf echten Daten ≈ 1.1 (dario 100 Samples: 1.15) | Bei getrennter Auswertung nur auf echten Samples ergibt sich die belastbare MAE; augmentierte Zwillinge dürfen nicht in die Bewertung |
 | Exp 2 | Live-Vorhersage über Demo-Modus (aufmerksames Lesen) | Vorhersage innerhalb der Fehlertoleranz | Pipeline funktioniert Ende-zu-Ende in Echtzeit |
 | Exp 3 | Negativtest: absichtlich unaufmerksames Lesen | Echt 3/10, vorhergesagt 10/10 | Modell kann nur den trainierten Bereich (aufmerksames Lesen) abdecken |
 

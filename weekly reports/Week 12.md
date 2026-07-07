@@ -20,7 +20,7 @@ trainierten Modell einmal komplett durchlaufen lassen.
 - Zeitbasis-Korrektur in `extract_features.py` implementiert: automatische Offset-Erkennung
   zwischen Boot- und Unix-Zeit über die Marker-Segmente
 - Erste Random-Forest-Modelle (within-subject, Leave-One-Out-CV) auf den echten Daten trainiert
-- Ergebnis auf echten Daten: MAE ≈ 0.4
+- Ergebnis auf echten Daten: MAE ≈ 1.1 (gepoolt)
 
 ### 3. Repository / Documentation Work
 - `screen_gaze_tracker.py`: speichert jetzt Unix-Zeit und hängt an bestehende CSVs an
@@ -33,7 +33,7 @@ trainierten Modell einmal komplett durchlaufen lassen.
 |-----------|-------------|--------|----------------|
 | Exp 1 | Marker-Anzahl mit gelesenen Texten abgeglichen | Deutlich weniger Segmente als Lesungen | Datenverlust durch Überschreiben bei Skript-Neustart |
 | Exp 2 | Gaze-Zeitfenster gegen Marker-Zeitstempel geprüft | Nur die jeweils letzte Session vorhanden | Gaze-Tracker wurde pro Session neu gestartet → alte Daten überschrieben |
-| Exp 3 | Training auf 300 echten Samples (LOO-CV) | MAE 0.385 - 0.425 | Modell lernt für jeweiligen Probanden |
+| Exp 3 | Training auf 300 echten Samples (LOO-CV) | MAE 0.91 - 1.27 (echte Daten) | Modell lernt für jeweiligen Probanden |
 
 ## Results
 - 300 gültige echte Samples über alle Probanden
