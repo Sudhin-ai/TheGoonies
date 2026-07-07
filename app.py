@@ -18,9 +18,11 @@ als Fallback nutzbar. Datenformate sind identisch.
 import csv
 import ctypes
 import json
+import math
 import os
 import subprocess
 import sys
+import threading
 import time
 
 import joblib
@@ -128,6 +130,7 @@ class Session:
     """Globaler Zustand des aktuellen Durchlaufs (eine Person zur Zeit)."""
     participant = None
     mode        = None    # "normal" | "demo"
+    model       = "personal"  # "personal" | "pooled"
     text_id     = None
     tracker     = None    # subprocess.Popen
     gaze_path   = None
@@ -166,35 +169,35 @@ def stop_tracker():
 # Vorhersage (Demo-Modus)
 # ---------------------------------------------------------------------------
 
-def predict_score(participant, gaze_path, t_start, t_end):
-    """Gibt (score, mae) zurück. mae ist None wenn nicht im Modell gespeichert."""
+def predict_score(participant, gaze_path, t_start, t_end, model="personal"):
+    """Gibt (score, mae, model_name) zurück. mae ist None wenn nicht gespeichert."""
     from features import crop_stream_to_window, extract_gaze, gaze_csv_to_stream
     import pandas as pd
 
-    model_path = os.path.join(MODELS_DIR, f"{participant}.pkl")
-    if not os.path.exists(model_path):
+    if model == "pooled":
         model_path = os.path.join(MODELS_DIR, "pooled.pkl")
+        model_name = "Gepoolt"
+    else:
+        model_path = os.path.join(MODELS_DIR, f"{participant}.pkl")
+        model_name = participant
+        if not os.path.exists(model_path):
+            model_path = os.path.join(MODELS_DIR, "pooled.pkl")
+            model_name = "Gepoolt (Fallback)"
     bundle = joblib.load(model_path)
 
     stream = gaze_csv_to_stream(gaze_path)
     seg = crop_stream_to_window(stream, t_start, t_end)
     row = extract_gaze(seg)
     sample = pd.DataFrame([row])[bundle["feature_cols"]]
-    return float(bundle["model"].predict(sample)[0]), bundle.get("mae")
+    return float(bundle["model"].predict(sample)[0]), bundle.get("mae"), model_name
 
 
 def display_score(value):
-    """Rundet für die Anzeige: Nachkommastelle < 0.35 → abrunden,
-    > 0.65 → aufrunden, dazwischen → Halbschritt (z.B. 7.5)."""
-    base = int(value)
-    frac = value - base
-    if frac < 0.35:
-        result = base
-    elif frac > 0.65:
-        result = base + 1
-    else:
-        return f"{base}.5"
-    return str(result)
+    """Rundet die Vorhersage auf eine ganze Zahl (0–10). Der echte Quiz-Score
+    ist ganzzahlig, und bei einer MAE von ~1 Punkt täuschte eine Halbschritt-
+    Anzeige eine Präzision vor, die das Modell nicht hat."""
+    result = int(round(value))
+    return str(max(0, min(10, result)))
 
 # ---------------------------------------------------------------------------
 # HTML (gemeinsames Layout)
@@ -250,6 +253,13 @@ HOME_HTML = BASE_CSS + """
       <strong>Normaler Durchlauf</strong> – Daten für das Training sammeln</label>
     <label class="radio"><input type="radio" name="mode" value="demo">
       <strong>Vorhersage-Demo</strong> – Modell sagt den Score voraus</label>
+
+    <p class="muted" style="margin:18px 0 8px;">Modell für die Vorhersage-Demo:</p>
+    <label class="radio"><input type="radio" name="model" value="personal" checked>
+      <strong>Persönliches Modell</strong> – trainiert nur auf diesem Teilnehmer</label>
+    <label class="radio"><input type="radio" name="model" value="pooled">
+      <strong>Gepooltes Modell</strong> – trainiert auf allen Teilnehmern</label>
+
     <div class="row"><button class="btn btn-blue" type="submit">Durchlauf starten →</button></div>
   </form>
   {% if error %}<p style="color:#dc2626; margin-top:20px;"><strong>Fehler:</strong> {{ error }}</p>{% endif %}
@@ -302,7 +312,7 @@ NORMAL_DONE_HTML = BASE_CSS + """
 DEMO_RESULT_HTML = BASE_CSS + """
 <div class="card">
   <h1>Vorhersage-Demo – Ergebnis</h1>
-  <p class="muted">Text {{ text_id }} · {{ participant }}</p>
+  <p class="muted">Text {{ text_id }} · {{ participant }}{% if model_name %} · Modell: {{ model_name }}{% endif %}</p>
   <div class="row" style="gap:24px;">
     <div class="result-box" style="flex:1;">
       <p>Vorhergesagt (Modell)</p>
@@ -320,10 +330,21 @@ DEMO_RESULT_HTML = BASE_CSS + """
 </div>
 """
 
+PIPELINE_RUNNING_HTML = BASE_CSS + """
+<meta http-equiv="refresh" content="4">
+<div class="card" style="text-align:center; padding-top:80px;">
+  <h1>Daten werden verarbeitet…</h1>
+  <p class="muted" style="font-size:1.1rem; margin-top:16px;">
+    Schritt {{ step }} von {{ total }}: <strong>{{ current }}</strong></p>
+  <p class="muted" style="margin-top:24px;">Die Seite aktualisiert sich automatisch.
+    Das Modell-Update dauert ca. 10–20 Sekunden.</p>
+</div>
+"""
+
 STOPPED_HTML = BASE_CSS + """
 <div class="card">
   <h1>Durchlauf beendet ✓</h1>
-  <p class="muted">Alle Daten gespeichert. Scores wurden aktualisiert.</p>
+  <p class="muted">Scores ausgewertet, Features extrahiert, Daten augmentiert, Modell aktualisiert.</p>
   <pre style="background:#f3f4f6; padding:16px; border-radius:8px; font-size:.85rem;
        max-height:300px; overflow:auto;">{{ log }}</pre>
   <div class="row"><a class="btn btn-blue" href="/">Zurück zum Start</a></div>
@@ -349,6 +370,7 @@ def home():
 def start():
     S.participant = request.form["participant"]
     S.mode        = request.form["mode"]
+    S.model       = request.form.get("model", "personal")
 
     if S.mode == "demo":
         S.gaze_path    = os.path.join(RAW_DATA, "demo_gaze.csv")
@@ -409,17 +431,18 @@ def answers():
 
     if S.mode == "demo":
         stop_tracker()
-        predicted, mae, error = None, None, None
+        predicted, mae, model_name, error = None, None, None, None
         try:
-            raw_score, mae = predict_score(S.participant, S.gaze_path,
-                                           S.demo_start, S.demo_end)
+            raw_score, mae, model_name = predict_score(
+                S.participant, S.gaze_path, S.demo_start, S.demo_end, S.model)
             predicted = display_score(raw_score)
         except Exception as e:
             error = str(e)
         return render_template_string(
             DEMO_RESULT_HTML, text_id=S.text_id, participant=S.participant,
             predicted=predicted or "–", actual=actual, error=error,
-            mae=f"{mae:.1f}" if mae else None)
+            model_name=model_name,
+            mae=f"{math.ceil(mae * 10) / 10:.1f}" if mae else None)
 
     # Normal: Fortschritt hochzählen
     progress = load_progress()
@@ -435,17 +458,57 @@ def next_text():
     return redirect("/read")
 
 
+PIPELINE = {"running": False, "log": "", "done_steps": 0}
+
+PIPELINE_STEPS = [
+    ("Scores auswerten",        lambda p: [PYTHON, "score.py", "--participant", p]),
+    ("Features extrahieren",    lambda p: [PYTHON, "extract_features.py", "--auto"]),
+    ("Daten augmentieren",      lambda p: [PYTHON, "augment_data.py", "--target", "200"]),
+    ("Modell aktualisieren",    lambda p: [PYTHON, "train_model.py",
+                                           "--dataset", "dataset_augmented.csv", "--no-cv"]),
+]
+
+
+def run_pipeline(participant):
+    cwd = os.path.dirname(os.path.abspath(__file__))
+    env = {**os.environ, "PYTHONIOENCODING": "utf-8"}
+    PIPELINE["running"] = True
+    PIPELINE["log"] = ""
+    PIPELINE["done_steps"] = 0
+    for name, cmd in PIPELINE_STEPS:
+        PIPELINE["log"] += f"\n=== {name} ===\n"
+        try:
+            result = subprocess.run(cmd(participant), capture_output=True,
+                                    text=True, encoding="utf-8", errors="replace",
+                                    cwd=cwd, env=env, timeout=600)
+            PIPELINE["log"] += (result.stdout or "") + (result.stderr or "")
+        except Exception as e:
+            PIPELINE["log"] += f"FEHLER: {e}\n"
+        PIPELINE["done_steps"] += 1
+    PIPELINE["running"] = False
+
+
 @app.route("/stop", methods=["POST"])
 @app.route("/stop_get", methods=["GET"])
 def stop():
     stop_tracker()
-    # Scores automatisch auswerten
-    result = subprocess.run(
-        [PYTHON, "score.py", "--participant", S.participant],
-        capture_output=True, text=True,
-        cwd=os.path.dirname(os.path.abspath(__file__)))
-    log = (result.stdout or "") + (result.stderr or "")
-    return render_template_string(STOPPED_HTML, log=log.strip() or "score.py ohne Ausgabe.")
+    if not PIPELINE["running"]:
+        threading.Thread(target=run_pipeline, args=(S.participant,),
+                         daemon=True).start()
+    return redirect("/pipeline")
+
+
+@app.route("/pipeline")
+def pipeline_status():
+    if PIPELINE["running"]:
+        step = PIPELINE["done_steps"]
+        names = [n for n, _ in PIPELINE_STEPS]
+        current = names[step] if step < len(names) else "…"
+        return render_template_string(PIPELINE_RUNNING_HTML,
+                                      step=step + 1, total=len(names),
+                                      current=current)
+    return render_template_string(
+        STOPPED_HTML, log=PIPELINE["log"].strip() or "Keine Ausgabe.")
 
 
 @app.route("/finish_demo")
