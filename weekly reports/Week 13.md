@@ -28,9 +28,13 @@ Abschlusspräsentation erstellen.
   Probanden-Auswahl, automatischer Start des Gaze-Trackers, Textanzeige, MC-Fragen,
   Weiter/Stopp, alles auf einer Seite; nur noch ein Terminal-Befehl nötig
 - **Demo-Modus** in der App: nach dem Lesen wird der vorhergesagte Score direkt neben dem
-  echten Quiz-Ergebnis angezeigt, inklusive Fehlertoleranz (MAE) des Modells
-- Anzeige-Logik für Vorhersagen: Runden auf ganze Scores, bei Unsicherheit zwischen zwei
-  Werten Anzeige als Halbschritt (z. B. „7.5")
+  echten Quiz-Ergebnis angezeigt, inklusive Fehlertoleranz (MAE) des Modells; wählbar ist
+  zudem das persönliche oder das gepoolte Modell
+- **Eigene Demo-Texte** erstellt (`demo_texte.json` + `demo_answer_key.csv`): 10 Texte auf
+  Uni-Niveau mit anspruchsvollen MC-Fragen, die ausschließlich im Demo-Modus gelesen werden —
+  getrennt von den 100 regulären Trainingstexten
+- Anzeige-Logik für Vorhersagen: Runden auf ganze Scores (bei einer MAE von ~1 Punkt täuschte
+  eine Halbschritt-Anzeige eine zu hohe Präzision vor)
 - Repository aufgeräumt: alte Skript-Versionen und AirPods-Dateien nach `archive/`,
   Screenshots nach `docs/images/`, README vollständig überarbeitet, `requirements.txt` ergänzt
 - **Abschlusspräsentation (PowerPoint)** erstellt: Fragestellung, Methodik (Tobii + MOG2,
