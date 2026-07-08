@@ -32,7 +32,8 @@ from flask import Flask, redirect, render_template_string, request
 # Konfiguration
 # ---------------------------------------------------------------------------
 
-TEXTE_JSON    = "texte.json"
+TEXTE_JSON      = "texte.json"
+DEMO_TEXTE_JSON = "demo_texte.json"
 PROGRESS_FILE = "progress.json"
 ANSWER_KEY    = "answer_key.csv"
 ANTWORTEN_DIR = "antworten"
@@ -65,6 +66,17 @@ def load_texte(path):
 
 TEXTE = load_texte(TEXTE_JSON)
 TEXT_IDS = sorted(TEXTE.keys())
+
+# Eigene Textsammlung nur für den Demo-Modus (falls vorhanden)
+DEMO_TEXTE = load_texte(DEMO_TEXTE_JSON) if os.path.exists(DEMO_TEXTE_JSON) else {}
+DEMO_TEXT_IDS = sorted(DEMO_TEXTE.keys())
+
+
+def active_texte():
+    """Liefert die passende Textsammlung je nach Modus."""
+    if S.mode == "demo" and DEMO_TEXTE:
+        return DEMO_TEXTE
+    return TEXTE
 
 
 def load_progress():
@@ -108,7 +120,7 @@ def save_answers(participant, text_id, form, demo=False):
         w = csv.writer(f)
         if write_header:
             w.writerow(["text_id", "question_id", "answer"])
-        for q in TEXTE[text_id].get("questions", []):
+        for q in active_texte()[text_id].get("questions", []):
             qid = q["question_id"]
             ans = form.get(f"q{qid}", "")
             w.writerow([text_id, qid, ans])
@@ -118,7 +130,7 @@ def save_answers(participant, text_id, form, demo=False):
 
 def compute_actual_score(text_id, answers):
     correct = {q["question_id"]: str(q["correct"]).strip().upper()
-               for q in TEXTE[text_id].get("questions", [])}
+               for q in active_texte()[text_id].get("questions", [])}
     return sum(1 for qid, ans in answers
                if correct.get(qid) == str(ans).strip().upper())
 
@@ -384,7 +396,7 @@ def start():
 
     if S.mode == "demo":
         import random
-        S.text_id = random.choice(TEXT_IDS)
+        S.text_id = random.choice(DEMO_TEXT_IDS if DEMO_TEXTE else TEXT_IDS)
     else:
         S.text_id = next_text_id(S.participant)
 
@@ -398,7 +410,7 @@ def start():
 
 @app.route("/read")
 def read():
-    entry = TEXTE[S.text_id]
+    entry = active_texte()[S.text_id]
     write_marker(S.markers_path, "text_start", S.text_id)
     S.demo_start = time.time()
     return render_template_string(
@@ -417,7 +429,7 @@ def finish_reading():
 
 @app.route("/questions")
 def questions():
-    entry = TEXTE[S.text_id]
+    entry = active_texte()[S.text_id]
     return render_template_string(
         QUESTIONS_HTML, text_id=S.text_id, participant=S.participant,
         title=entry.get("title", ""), questions=entry.get("questions", []))

@@ -1,0 +1,101 @@
+text_id,title,question_id,correct
+1,Gödels Unvollständigkeitssätze und die Grenzen formaler Systeme,1,B
+1,Gödels Unvollständigkeitssätze und die Grenzen formaler Systeme,2,B
+1,Gödels Unvollständigkeitssätze und die Grenzen formaler Systeme,3,A
+1,Gödels Unvollständigkeitssätze und die Grenzen formaler Systeme,4,B
+1,Gödels Unvollständigkeitssätze und die Grenzen formaler Systeme,5,A
+1,Gödels Unvollständigkeitssätze und die Grenzen formaler Systeme,6,B
+1,Gödels Unvollständigkeitssätze und die Grenzen formaler Systeme,7,B
+1,Gödels Unvollständigkeitssätze und die Grenzen formaler Systeme,8,B
+1,Gödels Unvollständigkeitssätze und die Grenzen formaler Systeme,9,B
+1,Gödels Unvollständigkeitssätze und die Grenzen formaler Systeme,10,A
+2,Entropie und der Zeitpfeil,1,B
+2,Entropie und der Zeitpfeil,2,B
+2,Entropie und der Zeitpfeil,3,B
+2,Entropie und der Zeitpfeil,4,B
+2,Entropie und der Zeitpfeil,5,B
+2,Entropie und der Zeitpfeil,6,B
+2,Entropie und der Zeitpfeil,7,A
+2,Entropie und der Zeitpfeil,8,B
+2,Entropie und der Zeitpfeil,9,B
+2,Entropie und der Zeitpfeil,10,A
+3,Predictive Coding: Das Gehirn als Vorhersagemaschine,1,B
+3,Predictive Coding: Das Gehirn als Vorhersagemaschine,2,A
+3,Predictive Coding: Das Gehirn als Vorhersagemaschine,3,B
+3,Predictive Coding: Das Gehirn als Vorhersagemaschine,4,A
+3,Predictive Coding: Das Gehirn als Vorhersagemaschine,5,B
+3,Predictive Coding: Das Gehirn als Vorhersagemaschine,6,B
+3,Predictive Coding: Das Gehirn als Vorhersagemaschine,7,A
+3,Predictive Coding: Das Gehirn als Vorhersagemaschine,8,B
+3,Predictive Coding: Das Gehirn als Vorhersagemaschine,9,B
+3,Predictive Coding: Das Gehirn als Vorhersagemaschine,10,B
+4,Das Nash-Gleichgewicht und die Grenzen rationaler Strategie,1,B
+4,Das Nash-Gleichgewicht und die Grenzen rationaler Strategie,2,B
+4,Das Nash-Gleichgewicht und die Grenzen rationaler Strategie,3,B
+4,Das Nash-Gleichgewicht und die Grenzen rationaler Strategie,4,A
+4,Das Nash-Gleichgewicht und die Grenzen rationaler Strategie,5,B
+4,Das Nash-Gleichgewicht und die Grenzen rationaler Strategie,6,B
+4,Das Nash-Gleichgewicht und die Grenzen rationaler Strategie,7,B
+4,Das Nash-Gleichgewicht und die Grenzen rationaler Strategie,8,A
+4,Das Nash-Gleichgewicht und die Grenzen rationaler Strategie,9,B
+4,Das Nash-Gleichgewicht und die Grenzen rationaler Strategie,10,B
+5,Epigenetik: Vererbung jenseits der DNA-Sequenz,1,B
+5,Epigenetik: Vererbung jenseits der DNA-Sequenz,2,B
+5,Epigenetik: Vererbung jenseits der DNA-Sequenz,3,A
+5,Epigenetik: Vererbung jenseits der DNA-Sequenz,4,B
+5,Epigenetik: Vererbung jenseits der DNA-Sequenz,5,B
+5,Epigenetik: Vererbung jenseits der DNA-Sequenz,6,B
+5,Epigenetik: Vererbung jenseits der DNA-Sequenz,7,B
+5,Epigenetik: Vererbung jenseits der DNA-Sequenz,8,B
+5,Epigenetik: Vererbung jenseits der DNA-Sequenz,9,A
+5,Epigenetik: Vererbung jenseits der DNA-Sequenz,10,B
+6,Wittgenstein und die Grenzen der Sprache,1,B
+6,Wittgenstein und die Grenzen der Sprache,2,B
+6,Wittgenstein und die Grenzen der Sprache,3,B
+6,Wittgenstein und die Grenzen der Sprache,4,B
+6,Wittgenstein und die Grenzen der Sprache,5,B
+6,Wittgenstein und die Grenzen der Sprache,6,B
+6,Wittgenstein und die Grenzen der Sprache,7,B
+6,Wittgenstein und die Grenzen der Sprache,8,B
+6,Wittgenstein und die Grenzen der Sprache,9,B
+6,Wittgenstein und die Grenzen der Sprache,10,B
+7,Gekrümmte Raumzeit: Einsteins allgemeine Relativitätstheorie,1,B
+7,Gekrümmte Raumzeit: Einsteins allgemeine Relativitätstheorie,2,B
+7,Gekrümmte Raumzeit: Einsteins allgemeine Relativitätstheorie,3,B
+7,Gekrümmte Raumzeit: Einsteins allgemeine Relativitätstheorie,4,B
+7,Gekrümmte Raumzeit: Einsteins allgemeine Relativitätstheorie,5,B
+7,Gekrümmte Raumzeit: Einsteins allgemeine Relativitätstheorie,6,B
+7,Gekrümmte Raumzeit: Einsteins allgemeine Relativitätstheorie,7,B
+7,Gekrümmte Raumzeit: Einsteins allgemeine Relativitätstheorie,8,A
+7,Gekrümmte Raumzeit: Einsteins allgemeine Relativitätstheorie,9,B
+7,Gekrümmte Raumzeit: Einsteins allgemeine Relativitätstheorie,10,B
+8,"Geldpolitik, Inflation und die Rolle der Zentralbank",1,B
+8,"Geldpolitik, Inflation und die Rolle der Zentralbank",2,B
+8,"Geldpolitik, Inflation und die Rolle der Zentralbank",3,B
+8,"Geldpolitik, Inflation und die Rolle der Zentralbank",4,B
+8,"Geldpolitik, Inflation und die Rolle der Zentralbank",5,B
+8,"Geldpolitik, Inflation und die Rolle der Zentralbank",6,A
+8,"Geldpolitik, Inflation und die Rolle der Zentralbank",7,A
+8,"Geldpolitik, Inflation und die Rolle der Zentralbank",8,B
+8,"Geldpolitik, Inflation und die Rolle der Zentralbank",9,A
+8,"Geldpolitik, Inflation und die Rolle der Zentralbank",10,B
+9,CRISPR: Präzise Eingriffe ins Erbgut,1,B
+9,CRISPR: Präzise Eingriffe ins Erbgut,2,B
+9,CRISPR: Präzise Eingriffe ins Erbgut,3,B
+9,CRISPR: Präzise Eingriffe ins Erbgut,4,A
+9,CRISPR: Präzise Eingriffe ins Erbgut,5,B
+9,CRISPR: Präzise Eingriffe ins Erbgut,6,B
+9,CRISPR: Präzise Eingriffe ins Erbgut,7,A
+9,CRISPR: Präzise Eingriffe ins Erbgut,8,B
+9,CRISPR: Präzise Eingriffe ins Erbgut,9,B
+9,CRISPR: Präzise Eingriffe ins Erbgut,10,B
+10,Das Anthropozän: Der Mensch als geologische Kraft,1,A
+10,Das Anthropozän: Der Mensch als geologische Kraft,2,B
+10,Das Anthropozän: Der Mensch als geologische Kraft,3,C
+10,Das Anthropozän: Der Mensch als geologische Kraft,4,B
+10,Das Anthropozän: Der Mensch als geologische Kraft,5,B
+10,Das Anthropozän: Der Mensch als geologische Kraft,6,B
+10,Das Anthropozän: Der Mensch als geologische Kraft,7,B
+10,Das Anthropozän: Der Mensch als geologische Kraft,8,B
+10,Das Anthropozän: Der Mensch als geologische Kraft,9,A
+10,Das Anthropozän: Der Mensch als geologische Kraft,10,B
